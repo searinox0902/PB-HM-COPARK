@@ -22,7 +22,45 @@ namespace WpfApp1
         public Principal(string nombreusuario)
         {
             InitializeComponent();
-            lblsaludo.Content = "Hola, " + nombreusuario.ToString();
+            //lblsaludo.Content = "Hola, " + nombreusuario.ToString();
+        }
+
+        private void EditarPuesto(object sender, RoutedEventArgs e)
+        {
+            AdminPuestosEdit AdminPuestosEditWindow = new AdminPuestosEdit();
+
+            AdminPuestosEditWindow.Show();
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

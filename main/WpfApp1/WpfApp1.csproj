@@ -55,10 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AdminPuestosEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AdminPuestosEdit.xaml.cs">
+      <DependentUpon>AdminPuestosEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -106,6 +113,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="login-photo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="main-logo-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon-admin_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon-user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

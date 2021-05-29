@@ -36,7 +36,7 @@ namespace WpfApp1
             {
                 if (usuario[i] == txtUsuario.Text && contrasena[i] == txtContrasena.Text)
                 {
-                    Principal ventanaprincipal = new Principal(usuario[i]);
+                    Principal ventanaprincipal = new Principal();
                     ventanaprincipal.Show();
                     this.Close();
                     ban = 1;

@@ -2,16 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace WpfApp1
 {
@@ -19,12 +11,10 @@ namespace WpfApp1
     public partial class AdminPuestosEdit : Window
     {
 
-        ObservableCollection<Puestos> listaPuestos = new ObservableCollection<Puestos>();
+        ObservableCollection<DataPuesto> listaPuestos = new ObservableCollection<DataPuesto>();
       
         int countPuesto = 0;
-
- 
-
+        int index = 0;
 
         public AdminPuestosEdit()
         {
@@ -32,15 +22,14 @@ namespace WpfApp1
            
 
 
-            listaPuestos.Add(new Puestos() { id = "A-001", estado = false, desc = "Silla bonita", dateInit = "s", dateEnd = "s" });
-            listaPuestos.Add(new Puestos() { id = "A-002", estado = true, desc = "Silla verde", dateInit = "s", dateEnd = "s" });
-            listaPuestos.Add(new Puestos() { id = "A-003", estado = false, desc = "Silla roja", dateInit = "s", dateEnd = "s" });
-            listaPuestos.Add(new Puestos() { id = "A-004", estado = true, desc = "Silla cerca de la cafetera", dateInit = "s", dateEnd = "s" });
-            listaPuestos.Add(new Puestos() { id = "A-005", estado = false, desc = "Con vista bonita", dateInit = "s", dateEnd = "s" });
+            listaPuestos.Add(new DataPuesto() { id = "A-001", estado = false, desc = "Silla bonita", dateInit = "s", dateEnd = "s" });
+            listaPuestos.Add(new DataPuesto() { id = "A-002", estado = true, desc = "Silla verde", dateInit = "s", dateEnd = "s" });
+            listaPuestos.Add(new DataPuesto() { id = "A-003", estado = false, desc = "Silla roja", dateInit = "s", dateEnd = "s" });
+            listaPuestos.Add(new DataPuesto() { id = "A-004", estado = true, desc = "Silla cerca de la cafetera", dateInit = "s", dateEnd = "s" });
+            listaPuestos.Add(new DataPuesto() { id = "A-005", estado = false, desc = "Con vista bonita", dateInit = "s", dateEnd = "s" });
 
-            //listaDePuestos.ItemsSource = listaPuestos;
 
-            listaDePuestos.ItemsSource = listaPuestos;
+            ListBoxPuestos.ItemsSource = listaPuestos;
 
             count_puestos();
         }
@@ -48,30 +37,33 @@ namespace WpfApp1
         // BOTON DE RETROCEDER
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            Principal ventanaprincipal = new Principal();
+            ventanaprincipal.Show();
+            this.Close();
         }
-
 
 
         // EDITAR 
         private void Edit_Puesto(object sender, RoutedEventArgs e)
         {
-      
+
+            index = ListBoxPuestos.SelectedIndex;
+            listaPuestos.RemoveAt(index);
+            listaPuestos.Insert(index, new DataPuesto() { id = PuestoId.Text, estado = false, desc = PuestoDesc.Text, dateInit = "s", dateEnd = "s" });
         }
 
        
 
         private void seleccted_change(object sender, SelectionChangedEventArgs e)
         {
+            if (ListBoxPuestos.SelectedItem != null)
+            {
+                PuestoId.Text = (ListBoxPuestos.SelectedItem as DataPuesto).id;
+                PuestoState.Text = Convert.ToString((ListBoxPuestos.SelectedItem as DataPuesto).estado);
+                PuestoDesc.Text = (ListBoxPuestos.SelectedItem as DataPuesto).desc; 
+            }
 
             count_puestos();
-
-            if (listaDePuestos.SelectedItem != null)
-            {
-                PuestoId.Text = (listaDePuestos.SelectedItem as Puestos).id;
-                PuestoState.Text = Convert.ToString((listaDePuestos.SelectedItem as Puestos).estado);
-                PuestoDesc.Text = (listaDePuestos.SelectedItem as Puestos).desc; 
-            }
         }
 
         public void count_puestos()
@@ -83,14 +75,7 @@ namespace WpfApp1
        
     }
 
-    public class Puestos
-    {
-        public string id        { get; set; }
-        public bool   estado    { get; set; }
-        public string desc      { get; set; }
-        public string dateInit  { get; set; }
-        public string dateEnd   { get; set; }
-    }
+  
 
 
 }

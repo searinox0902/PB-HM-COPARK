@@ -30,7 +30,7 @@
 
         <TextBlock x:Name="CountPuestos" HorizontalAlignment="Left" Height="17" Margin="229,229,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold" Background="White" Foreground="#FF2F70FE"/>
 
-        <ListBox Name="listaDePuestos" HorizontalAlignment="Left" Height="182" Margin="109,251,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="seleccted_change">
+        <ListBox Name="ListBoxPuestos" HorizontalAlignment="Left" Height="182" Margin="109,251,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="seleccted_change">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="2">

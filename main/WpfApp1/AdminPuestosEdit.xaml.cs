@@ -15,6 +15,7 @@ namespace WpfApp1
       
         int countPuesto = 0;
         int index = 0;
+        bool state = false;
 
         public AdminPuestosEdit()
         {
@@ -46,10 +47,13 @@ namespace WpfApp1
         // EDITAR 
         private void Edit_Puesto(object sender, RoutedEventArgs e)
         {
+            if (ListBoxPuestos.SelectedItem != null)
+            {
+                index = ListBoxPuestos.SelectedIndex;
+                listaPuestos.RemoveAt(index);
+                listaPuestos.Insert(index, new DataPuesto() { id = PuestoId.Text, estado = state, desc = PuestoDesc.Text, dateInit = "s", dateEnd = "s" });
+            }
 
-            index = ListBoxPuestos.SelectedIndex;
-            listaPuestos.RemoveAt(index);
-            listaPuestos.Insert(index, new DataPuesto() { id = PuestoId.Text, estado = false, desc = PuestoDesc.Text, dateInit = "s", dateEnd = "s" });
         }
 
        
@@ -60,8 +64,11 @@ namespace WpfApp1
             {
                 PuestoId.Text = (ListBoxPuestos.SelectedItem as DataPuesto).id;
                 PuestoState.Text = Convert.ToString((ListBoxPuestos.SelectedItem as DataPuesto).estado);
-                PuestoDesc.Text = (ListBoxPuestos.SelectedItem as DataPuesto).desc; 
+                PuestoDesc.Text = (ListBoxPuestos.SelectedItem as DataPuesto).desc;
+
+                 RadioButton_Insert();
             }
+
 
             count_puestos();
         }
@@ -72,7 +79,18 @@ namespace WpfApp1
             CountPuestos.Text = Convert.ToString(countPuesto);
         }
 
-       
+      
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            state = Convert.ToBoolean(RadioTrue.IsChecked);
+        }
+
+
+        public void RadioButton_Insert()
+        {
+          
+
+        }
     }
 
   

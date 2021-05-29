@@ -45,17 +45,19 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        
+
         <TextBlock x:Name="identidicador" HorizontalAlignment="Left" Height="24" Margin="460,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Foreground="#FF525252" FontSize="14"><Run Text="Identificador"/><LineBreak/><Run/></TextBlock>
         <TextBox x:Name="PuestoId"  HorizontalAlignment="Left" Height="24" Margin="460,308,0,0" TextWrapping="Wrap"  Text="{Binding Text, ElementName=PuestoId}" VerticalAlignment="Top" Width="158"/>
 
-        <TextBlock x:Name="Estado" HorizontalAlignment="Left" Height="24" Margin="460,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Foreground="#FF525252" FontSize="14"><Run Text="Estado"/><LineBreak/><Run/></TextBlock>
-        <TextBox x:Name="PuestoState"  HorizontalAlignment="Left" Height="24" Margin="460,372,0,0" TextWrapping="Wrap"  Text="{Binding Text, ElementName=PuestoState}" VerticalAlignment="Top" Width="158"/>
+        <TextBlock x:Name="Estado" HorizontalAlignment="Left" Height="24" Margin="460,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Foreground="#FF525252" FontSize="14"><Run Text="Estado"/><LineBreak/><Run/></TextBlock>
 
         <TextBlock x:Name="Descripcion" HorizontalAlignment="Left" Height="24" Margin="460,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Foreground="#FF525252" FontSize="14"><Run Text="Descripción"/><LineBreak/><Run/></TextBlock>
         <TextBox x:Name="PuestoDesc"  HorizontalAlignment="Left" Height="24" Margin="460,442,0,0" TextWrapping="Wrap"  Text="{Binding Text, ElementName=PuestoDesc}" VerticalAlignment="Top" Width="158"/>
 
         <Button Content="EDITAR" HorizontalAlignment="Left" Margin="793,447,0,0" VerticalAlignment="Top" Width="75" Click="Edit_Puesto"/>
+        <RadioButton Name="RadioTrue" GroupName="g2" Content="Activar" HorizontalAlignment="Left" Margin="460,381,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+        <RadioButton Name="RadioFalse" GroupName="g2"  Content="Desactivar" HorizontalAlignment="Left" Margin="558,381,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" />
+        <TextBlock  x:Name="PuestoState"   HorizontalAlignment="Left" Height="24" Margin="570,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Foreground="#FF525252" FontSize="14"><Run Text="Estado"/><LineBreak/><Run/></TextBlock>
 
 
     </Grid>

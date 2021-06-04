@@ -25,6 +25,10 @@ namespace WpfApp1
             //lblsaludo.Content = "Hola, " + nombreusuario.ToString();
         }
 
+        public Principal()
+        {
+        }
+
         private void EditarPuesto(object sender, RoutedEventArgs e)
         {
             AdminPuestosEdit AdminPuestosEditWindow = new AdminPuestosEdit();
@@ -50,7 +54,10 @@ namespace WpfApp1
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
+            AdminPuestosEdit AdminPuestosEditWindow = new AdminPuestosEdit();
 
+            AdminPuestosEditWindow.Show();
+            this.Close();
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
@@ -60,7 +67,9 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow AdminPuestosEdit = new MainWindow();
+            AdminPuestosEdit.Show();
+            this.Close();
         }
     }
 }

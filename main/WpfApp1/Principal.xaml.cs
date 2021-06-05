@@ -24,9 +24,6 @@ namespace WpfApp1
             InitializeComponent();
         }
 
-        public Principal()
-        {
-        }
 
         private void EditarPuesto(object sender, RoutedEventArgs e)
         {

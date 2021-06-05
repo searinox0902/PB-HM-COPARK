@@ -25,7 +25,9 @@
         <Label x:Name="admin_Copy" Content="ADMINISTRAR PUESTO (EDITAR)" HorizontalAlignment="Left" Height="31" Margin="165,138,0,0" VerticalAlignment="Top" Width="396" FontWeight="Bold" Background="White" Foreground="#FF919191" FontSize="14"/>
         <Image HorizontalAlignment="Left" Height="38" Margin="122,134,0,0" VerticalAlignment="Top" Width="37" Source="icon-admin_1.png"/>
         <Label x:Name="admin_Copy1" Content="LISTA DE PUESTOS:" HorizontalAlignment="Left" Height="26" Margin="109,225,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold" Background="White" Foreground="#FF919191"/>
-        <Label x:Name="admin_Copy2" Content="LISTA DE PUESTOS:" HorizontalAlignment="Left" Height="26" Margin="432,225,0,0" VerticalAlignment="Top" Width="247" FontWeight="Bold" Background="White" Foreground="#FF919191"/>
+        <Label x:Name="admin_Copy2" HorizontalAlignment="Left" Height="26" Margin="432,225,0,0" VerticalAlignment="Top" Width="247" FontWeight="Bold" Background="White" Foreground="#FF919191">
+            <Label Content="Label"/>
+        </Label>
         <Rectangle Fill="#FFF7F7F7" HorizontalAlignment="Left" Height="242" Margin="432,256,0,0" VerticalAlignment="Top" Width="460" Stroke="#FFDDDDDD"/>
 
         <TextBlock x:Name="CountPuestos" HorizontalAlignment="Left" Height="17" Margin="229,229,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold" Background="White" Foreground="#FF2F70FE"/>
@@ -47,7 +49,7 @@
         </ListBox>
 
         <TextBlock x:Name="identidicador" HorizontalAlignment="Left" Height="24" Margin="460,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Foreground="#FF525252" FontSize="14"><Run Text="Identificador"/><LineBreak/><Run/></TextBlock>
-        <TextBox x:Name="PuestoId"  HorizontalAlignment="Left" Height="24" Margin="460,308,0,0" TextWrapping="Wrap"  Text="{Binding Text, ElementName=PuestoId}" VerticalAlignment="Top" Width="158"/>
+        <TextBox x:Name="PuestoId"  HorizontalAlignment="Left" Height="24" Margin="460,308,0,0" TextWrapping="Wrap"  Text="{Binding Text, ElementName=PuestoId}" VerticalAlignment="Top" Width="158" TextChanged="PuestoId_TextChanged"/>
 
         <TextBlock x:Name="Estado" HorizontalAlignment="Left" Height="24" Margin="460,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Foreground="#FF525252" FontSize="14"><Run Text="Estado"/><LineBreak/><Run/></TextBlock>
 

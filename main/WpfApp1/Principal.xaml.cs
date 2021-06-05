@@ -19,10 +19,9 @@ namespace WpfApp1
     /// </summary>
     public partial class Principal : Window
     {
-        public Principal(string nombreusuario)
+        public  Principal()
         {
             InitializeComponent();
-            //lblsaludo.Content = "Hola, " + nombreusuario.ToString();
         }
 
         public Principal()

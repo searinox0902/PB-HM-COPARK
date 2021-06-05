@@ -15,26 +15,21 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// Lógica de interacción para Administrarusuarioseliminar.xaml
+    /// Interaction logic for AdminCrearPuesto.xaml
     /// </summary>
-    public partial class Administrarusuarioseliminar : Window
+    public partial class AdminCrearPuesto : Window
     {
-        public Administrarusuarioseliminar()
+        public AdminCrearPuesto()
         {
             InitializeComponent();
         }
 
-        private void btnatras_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btneliminar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnatras_Click_1(object sender, RoutedEventArgs e)
+        private void seleccted_change(object sender, SelectionChangedEventArgs e)
         {
 
         }

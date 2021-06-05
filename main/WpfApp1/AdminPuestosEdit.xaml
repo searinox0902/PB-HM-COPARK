@@ -9,7 +9,7 @@
 
     <Grid>
         <Rectangle Fill="#FF2F70FE" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="954" RenderTransformOrigin="0.5,0.5" Margin="0,0,-0.4,0"/>
-        <Button Content="ATRÁS" HorizontalAlignment="Left" Height="25" Margin="24,12,0,0" VerticalAlignment="Top" Width="91" Click="Button_Click" Background="{x:Null}" Foreground="White" BorderBrush="White" FontWeight="Bold"/>
+        <Button Content="ATRÁS" HorizontalAlignment="Left" Height="25" Margin="24,12,0,0" VerticalAlignment="Top" Width="91" Click="Button_Click" Background="{x:Null}" Foreground="White" BorderBrush="White"/>
         <Image HorizontalAlignment="Left" Height="25" Margin="793,18,0,0" VerticalAlignment="Top" Width="137" Source="main-logo-white.png"/>
         <Rectangle Fill="#FFB7B7B7" HorizontalAlignment="Left" Height="1" Margin="4,103,0,0" VerticalAlignment="Top" Width="949" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
@@ -57,7 +57,7 @@
         <TextBlock x:Name="Descripcion" HorizontalAlignment="Left" Height="24" Margin="460,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Foreground="#FF525252" FontSize="14"><Run Text="Descripción"/><LineBreak/><Run/></TextBlock>
         <TextBox x:Name="PuestoDesc"  HorizontalAlignment="Left" Height="24" Margin="460,442,0,0" TextWrapping="Wrap"  Text="{Binding Text, ElementName=PuestoDesc}" VerticalAlignment="Top" Width="158"/>
 
-        <Button Content="EDITAR" HorizontalAlignment="Left" Margin="793,447,0,0" VerticalAlignment="Top" Width="75" Click="Edit_Puesto" FontWeight="Bold"/>
+        <Button Content="EDITAR" HorizontalAlignment="Left" Margin="793,447,0,0" VerticalAlignment="Top" Width="75" Click="Edit_Puesto"/>
 
 
     </Grid>

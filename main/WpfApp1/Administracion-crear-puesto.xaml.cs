@@ -49,8 +49,9 @@ namespace WpfApp1
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            dato.Add(txtDato.Text);
-            txtDato.Clear();
+            Administrarusuarioseliminar Administracion_crear_puesto = new Administrarusuarioseliminar
+            Administracion_crear_puesto.Show();
+                               Close();
 
             foreach (String item in dato)
             {

@@ -27,7 +27,6 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            //asdasd
         }
 
         private void btnIniciar_Click(object sender, RoutedEventArgs e)
@@ -62,7 +61,7 @@ namespace WpfApp1
                 txtContrasena.Text = "";
             }
             aux = aux + 1;
-            MessageBox.Show("Usuario registrado en la posicion: " + aux);
+            MessageBox.Show("Usuario registrado con exito");
         }
     }
 }

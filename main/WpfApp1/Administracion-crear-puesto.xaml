@@ -9,7 +9,7 @@
     <Grid>
         <Rectangle Fill="#FF2F70FE" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="954" RenderTransformOrigin="0.5,0.5" Margin="0,0,-162,0"/>
         <Image HorizontalAlignment="Left" Height="25" Margin="793,18,0,0" VerticalAlignment="Top" Width="137" Source="main-logo-white.png"/>
-        <Button x:Name="btnatras" Content="ATRÁS" HorizontalAlignment="Left" Height="25" Margin="24,12,0,0" VerticalAlignment="Top" Width="91" Click="Button_Click" Background="{x:Null}" Foreground="White" BorderBrush="White" OpacityMask="Black"/>
+        <Button x:Name="btnatras" Content="ATRÁS" HorizontalAlignment="Left" Height="25" Margin="24,12,0,0" VerticalAlignment="Top" Width="91" Click="Button_Click" Background="{x:Null}" Foreground="White" BorderBrush="White" OpacityMask="Black" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="87,203,0,0" TextWrapping="Wrap" Text="Crear Puesto" VerticalAlignment="Top"/>
         <Rectangle Fill="#FFF7F7F7" HorizontalAlignment="Left" Height="196" Margin="87,224,0,0" Stroke="#FFDDDDDD" VerticalAlignment="Top" Width="666" OpacityMask="#FF2F2F31"/>
         <TextBlock HorizontalAlignment="Left" Margin="106,253,0,0" TextWrapping="Wrap" Text="Identificado" VerticalAlignment="Top"/>
@@ -21,8 +21,8 @@
         <TextBlock HorizontalAlignment="Left" Margin="295,325,0,0" TextWrapping="Wrap" Text="Fecha inicial" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="531,325,0,0" TextWrapping="Wrap" Text="Fecha final" VerticalAlignment="Top"/>
         <TextBox x:Name="txtDato3" HorizontalAlignment="Left" Height="23" Margin="531,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="100,68,0,0" TextWrapping="Wrap" Text="Administración / Crear puesto" VerticalAlignment="Top" Background="#FFFDFDFC" Foreground="#FF2F70FE"/>
-        <Button x:Name="btncrear" Content="Crear" HorizontalAlignment="Left" Margin="400,440,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Background="#FF2F70FE" OpacityMask="White" Foreground="#FFEFF0EE"/>
+        <TextBlock HorizontalAlignment="Left" Margin="100,68,0,0" TextWrapping="Wrap" Text="Administración / Crear puesto" VerticalAlignment="Top" Background="#FFFCFCFD" Foreground="#FF2F70FE" FontWeight="Bold"/>
+        <Button x:Name="btncrear" Content="Crear" HorizontalAlignment="Left" Margin="400,440,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Background="#FF2F70FE" OpacityMask="White" Foreground="#FFEFF0EE" FontWeight="Bold"/>
 
     </Grid>
 </Window>

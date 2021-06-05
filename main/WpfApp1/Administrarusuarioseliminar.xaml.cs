@@ -36,7 +36,9 @@ namespace WpfApp1
 
         private void btnatras_Click_1(object sender, RoutedEventArgs e)
         {
-
+            Administracion_crear_puesto Administrarusuarioseliminar = new Administracion_crear_puesto();
+            Administrarusuarioseliminar.Show();
+            Close();
         }
     }
 }

@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
+
 namespace WpfApp1
 {
     /// ==================== COMO SACAR UN INDEX OF DE UNA LISTA MULTIDIMENSIONAL
@@ -48,15 +50,19 @@ namespace WpfApp1
         // BOTON DE RETROCEDER
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            Principal AdminPuestosEdit = new Principal();
+            AdminPuestosEdit.Show();
+            Close();
         }
 
-
+       
 
         // EDITAR 
         private void Edit_Puesto(object sender, RoutedEventArgs e)
         {
-      
+            Administracion_crear_puesto AdminPuestosEdit = new Administracion_crear_puesto();
+            AdminPuestosEdit.Show();
+            this.Close();
         }
 
        
@@ -80,7 +86,12 @@ namespace WpfApp1
             CountPuestos.Text = Convert.ToString(countPuesto);
         }
 
-       
+      
+
+        private void PuestoId_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 
     public class Puestos

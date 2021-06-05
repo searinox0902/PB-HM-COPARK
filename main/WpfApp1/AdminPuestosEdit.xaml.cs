@@ -5,6 +5,8 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
+
+
 namespace WpfApp1
 {
     /// ==================== COMO SACAR UN INDEX OF DE UNA LISTA MULTIDIMENSIONAL
@@ -47,13 +49,13 @@ namespace WpfApp1
         // EDITAR 
         private void Edit_Puesto(object sender, RoutedEventArgs e)
         {
+
             if (ListBoxPuestos.SelectedItem != null)
             {
                 index = ListBoxPuestos.SelectedIndex;
                 listaPuestos.RemoveAt(index);
                 listaPuestos.Insert(index, new DataPuesto() { id = PuestoId.Text, estado = state, desc = PuestoDesc.Text, dateInit = "s", dateEnd = "s" });
             }
-
         }
 
        
@@ -80,10 +82,12 @@ namespace WpfApp1
         }
 
       
+
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             state = Convert.ToBoolean(RadioTrue.IsChecked);
         }
+
 
 
         public void RadioButton_Insert()

@@ -61,6 +61,7 @@ namespace WpfApp1
                 txtContrasena.Text = "";
             }
             aux = aux + 1;
+            MessageBox.Show("Usuario registrado con exito");
         }
     }
 }

@@ -14,7 +14,9 @@
         <Rectangle Fill="#FFF7F7F7" HorizontalAlignment="Left" Height="207" Margin="317,132,0,0" VerticalAlignment="Top" Width="407"/>
         <Button x:Name="btnatras1" Content="RESERVA" HorizontalAlignment="Left" Height="30" Margin="626,296,0,0" VerticalAlignment="Top" Width="84" Background="#FF2F70FE" Foreground="#FFF9F3F3"/>
         <Image HorizontalAlignment="Left" Height="38" Margin="34,76,0,0" VerticalAlignment="Top" Width="37" Source="icon-user.png"/>
-        <Label Content="RESERVA PARQUEADERO" HorizontalAlignment="Left" Height="26" Margin="92,88,0,0" VerticalAlignment="Top" Width="160" BorderBrush="#FFE03737" Foreground="#FF2F70FE" FontWeight="Bold"/>
+        <Label Content="RESERVA PARQUEADERO" HorizontalAlignment="Left" Height="26" Margin="92,76,0,0" VerticalAlignment="Top" Width="160" BorderBrush="#FFE03737" Foreground="#FF2F70FE" FontWeight="Bold"/>
+        <Label Content="LISTA DE PUESTOS" HorizontalAlignment="Left" Margin="34,132,0,0" VerticalAlignment="Top"/>
+        <Label Content="Prueba" HorizontalAlignment="Left" Margin="430,102,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

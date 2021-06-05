@@ -7,16 +7,14 @@
         mc:Ignorable="d"
         Title="Administrarusuarioseliminar" Height="450" Width="800">
     <Grid>
-        <Button x:Name="btneliminar" Content="ELIMINAR" HorizontalAlignment="Left" Margin="626,351,0,0" VerticalAlignment="Top" Width="75" Click="btneliminar_Click" BorderBrush="#FF2F70FE" Background="#FF2F70FE" Foreground="#FFFDF6F6" FontWeight="Bold"/>
+        <Button x:Name="btneliminar" Content="ELIMINAR" HorizontalAlignment="Left" Margin="626,351,0,0" VerticalAlignment="Top" Width="75" Click="btneliminar_Click"/>
         <Image HorizontalAlignment="Left" Height="25" Margin="610,27,0,0" VerticalAlignment="Top" Width="136" Source="main-logo-white.png" RenderTransformOrigin="-0.715,0.12"/>
         <Rectangle Fill="#FF2F70FE" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="792" RenderTransformOrigin="0.5,0.5"/>
         <Image HorizontalAlignment="Left" Height="25" Margin="626,10,0,0" VerticalAlignment="Top" Width="137" Source="main-logo-white.png" RenderTransformOrigin="-0.551,0.54"/>
-        <Label x:Name="lbstex" Content="ADMINISTRAR USUARIO (ELIMINAR)" HorizontalAlignment="Left" Margin="98,74,0,0" VerticalAlignment="Top" Width="262" Background="{x:Null}" Foreground="#FF2F70FE" FontWeight="Bold"/>
+        <Label x:Name="lbstex" Content="" HorizontalAlignment="Left" Margin="22,82,0,0" VerticalAlignment="Top" Width="130" Background="#FFB4CDB0"/>
         <ListBox HorizontalAlignment="Left" Height="206" Margin="52,148,0,0" VerticalAlignment="Top" Width="168"/>
-        <Rectangle HorizontalAlignment="Left" Height="180" Margin="308,148,0,0" VerticalAlignment="Top" Width="410" Fill="White"/>
-        <Button x:Name="btnatras" Content="ATRÁS" HorizontalAlignment="Left" Height="25" Margin="35,10,0,0" VerticalAlignment="Top" Width="66" Foreground="White" FontWeight="Bold" Click="btnatras_Click_1" BorderBrush="#FF2F70FE" Background="#FF2F70FE"/>
-        <Image HorizontalAlignment="Left" Height="38" Margin="35,62,0,0" VerticalAlignment="Top" Width="37" Source="icon-user.png" RenderTransformOrigin="-5.662,-4.395"/>
-        <Label x:Name="lbllistadepuestos" Content="LISTA DE PUESTOS" HorizontalAlignment="Left" Height="34" Margin="65,109,0,0" VerticalAlignment="Top" Width="122"/>
+        <Rectangle HorizontalAlignment="Left" Height="180" Margin="308,134,0,0" VerticalAlignment="Top" Width="410" Fill="White"/>
+        <Button x:Name="btnatras" Content="ATRÁS" HorizontalAlignment="Left" Height="25" Margin="35,10,0,0" VerticalAlignment="Top" Width="66" Foreground="White" FontWeight="Bold" Click="btnatras_Click_1"/>
 
     </Grid>
 </Window>

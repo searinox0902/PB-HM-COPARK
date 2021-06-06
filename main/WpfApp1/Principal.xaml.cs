@@ -19,7 +19,7 @@ namespace WpfApp1
     /// </summary>
     public partial class Principal : Window
     {
-        public  Principal()
+        public Principal()
         {
             InitializeComponent();
         }
@@ -28,7 +28,6 @@ namespace WpfApp1
         private void Editar_Puesto(object sender, RoutedEventArgs e)
         {
             AdminPuestosEdit AdminPuestosEditWindow = new AdminPuestosEdit();
-
             AdminPuestosEditWindow.Show();
             this.Close();
         }
@@ -41,41 +40,32 @@ namespace WpfApp1
 
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void Eliminar_Puesto(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
+        // ===================  ADMIN USER =============== //
+
+        private void Editar_Usuario(object sender, RoutedEventArgs e)
         {
 
-        }
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-            AdminPuestosEdit AdminPuestosEditWindow = new AdminPuestosEdit();
-
-            AdminPuestosEditWindow.Show();
-            this.Close();
-        }
-
-        private void Button_Click_6(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow AdminPuestosEdit = new MainWindow();
-            AdminPuestosEdit.Show();
-            this.Close();
-        }
-
-        private void EditarUsuario(object sender, RoutedEventArgs e)
-        {
             AdminUsuarioEdit AdminUsuarioEdit = new AdminUsuarioEdit();
             AdminUsuarioEdit.Show();
             this.Close();
+        }
+
+        private void Eliminar_Usuario(object sender, RoutedEventArgs e)
+        {
+        }
+
+
+        private void Crear_Usuario(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void Btn_Back(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

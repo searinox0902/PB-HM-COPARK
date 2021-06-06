@@ -9,7 +9,7 @@
     <Grid>
 
         <Rectangle Fill="#FF2F70FE" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="954" RenderTransformOrigin="0.5,0.5" Margin="0,0,-0.4,0"/>
-        <Button Content="ATRÁS" HorizontalAlignment="Left" Height="25" Margin="24,12,0,0" VerticalAlignment="Top" Width="91" Click="Button_Click" Background="{x:Null}" Foreground="White" BorderBrush="White"/>
+        <Button Content="ATRÁS" HorizontalAlignment="Left" Height="25" Margin="22,13,0,0" VerticalAlignment="Top" Width="91" Click="Btn_Back" Background="{x:Null}" Foreground="White" BorderBrush="White"/>
         <Image HorizontalAlignment="Left" Height="25" Margin="793,18,0,0" VerticalAlignment="Top" Width="137" Source="main-logo-white.png"/>
         <Rectangle Fill="#FFB7B7B7" HorizontalAlignment="Left" Height="1" Margin="4,103,0,0" VerticalAlignment="Top" Width="949" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
@@ -30,10 +30,10 @@
         <Label x:Name="admin_Copy1" Content="ADMINISTRAR PUESTOS" HorizontalAlignment="Left" Height="24" Margin="133,300,0,0" VerticalAlignment="Top" Width="167" FontWeight="Bold" Background="{x:Null}" Foreground="#FF919191" FontSize="10"/>
         <Button Content="EDITAR PUESTO" HorizontalAlignment="Left" Height="25" Margin="141,345,0,0" VerticalAlignment="Top" Width="92" Click="Editar_Puesto" FontSize="9" Background="{x:Null}" Foreground="#FF2F70FE" BorderBrush="#FF2F70FE"/>
         <Button Content="CREAR PUESTO" HorizontalAlignment="Left" Height="25" Margin="141,382,0,0" VerticalAlignment="Top" Width="92" Click="Crear_Puesto" FontSize="9" Background="{x:Null}" Foreground="#FF2F70FE" BorderBrush="#FF2F70FE"/>
-        <Button Content="ELIMINAR PUESTO" HorizontalAlignment="Left" Height="25" Margin="141,419,0,0" VerticalAlignment="Top" Width="104" Click="Button_Click_3" FontSize="9" Background="{x:Null}" Foreground="#FF2F70FE" BorderBrush="#FF2F70FE"/>
-        <Button Content="EDITAR USUARIO" HorizontalAlignment="Left" Height="25" Margin="396,345,0,0" VerticalAlignment="Top" Width="104" Click="EditarUsuario" FontSize="9" Background="{x:Null}" Foreground="#FF2F70FE" BorderBrush="#FF2F70FE"/>
-        <Button Content="CREAR USUARIO" HorizontalAlignment="Left" Height="25" Margin="396,382,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click_5" FontSize="9" Background="{x:Null}" Foreground="#FF2F70FE" BorderBrush="#FF2F70FE"/>
-        <Button Content="ELIMINAR USUARIO" HorizontalAlignment="Left" Height="25" Margin="396,419,0,0" VerticalAlignment="Top" Width="104" Click="Button_Click_6" FontSize="9" Background="{x:Null}" Foreground="#FF2F70FE" BorderBrush="#FF2F70FE"/>
+        <Button Content="ELIMINAR PUESTO" HorizontalAlignment="Left" Height="25" Margin="141,419,0,0" VerticalAlignment="Top" Width="104" Click="Eliminar_Puesto" FontSize="9" Background="{x:Null}" Foreground="#FF2F70FE" BorderBrush="#FF2F70FE"/>
+        <Button Content="EDITAR USUARIO" HorizontalAlignment="Left" Height="25" Margin="396,345,0,0" VerticalAlignment="Top" Width="104" Click="Editar_Usuario" FontSize="9" Background="{x:Null}" Foreground="#FF2F70FE" BorderBrush="#FF2F70FE"/>
+        <Button Content="CREAR USUARIO" HorizontalAlignment="Left" Height="25" Margin="396,382,0,0" VerticalAlignment="Top" Width="92" Click="Crear_Usuario" FontSize="9" Background="{x:Null}" Foreground="#FF2F70FE" BorderBrush="#FF2F70FE"/>
+        <Button Content="ELIMINAR USUARIO" HorizontalAlignment="Left" Height="25" Margin="396,419,0,0" VerticalAlignment="Top" Width="104" Click="Eliminar_Usuario" FontSize="9" Background="{x:Null}" Foreground="#FF2F70FE" BorderBrush="#FF2F70FE"/>
         <Label x:Name="admin_Copy17" Content="ADMINISTRAR USUARIOS" HorizontalAlignment="Left" Height="24" Margin="396,300,0,0" VerticalAlignment="Top" Width="167" FontWeight="Bold" Background="{x:Null}" Foreground="#FF919191" FontSize="10"/>
 
     </Grid>

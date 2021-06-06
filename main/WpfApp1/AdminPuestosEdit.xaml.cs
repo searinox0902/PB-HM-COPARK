@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-
+using System.Windows.Media;
 
 
 namespace WpfApp1
@@ -13,7 +13,7 @@ namespace WpfApp1
     {
 
         ObservableCollection<DataPuesto> listaPuestos = new ObservableCollection<DataPuesto>();
-      
+
         int countPuesto = 0;
         int index = 0;
         bool state = false;
@@ -21,7 +21,7 @@ namespace WpfApp1
         public AdminPuestosEdit()
         {
             InitializeComponent();
-           
+
 
 
             listaPuestos.Add(new DataPuesto() { id = "A-001", estado = false, desc = "Silla bonita", dateInit = "s", dateEnd = "s" });
@@ -57,17 +57,18 @@ namespace WpfApp1
             }
         }
 
-       
+
 
         private void seleccted_change(object sender, SelectionChangedEventArgs e)
         {
             if (ListBoxPuestos.SelectedItem != null)
             {
+                bool state = (ListBoxPuestos.SelectedItem as DataPuesto).estado;
+
                 PuestoId.Text = (ListBoxPuestos.SelectedItem as DataPuesto).id;
                 PuestoState.Text = Convert.ToString((ListBoxPuestos.SelectedItem as DataPuesto).estado);
                 PuestoDesc.Text = (ListBoxPuestos.SelectedItem as DataPuesto).desc;
-
-                 RadioButton_Insert();
+                status_update(state);
             }
 
 
@@ -80,25 +81,45 @@ namespace WpfApp1
             CountPuestos.Text = Convert.ToString(countPuesto);
         }
 
-      
+
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             state = Convert.ToBoolean(RadioTrue.IsChecked);
         }
 
+        // metodo para actualizar el Estado, cambia el texto a 'verdadero' o 'falso' y el color. 
+        public void status_update(bool state)
+        {
+            if (state == false)
+            {
+                PuestoState.Text = "Inactivo";
+                PuestoState.Foreground = Brushes.Red;
 
+            }
+            else if (state == true)
+            {
+                PuestoState.Text = "Activo";
+                PuestoState.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF2F70FE"));
+
+
+            }
+            else
+            {
+                PuestoState.Text = "Error";
+            }
+        }
 
         public void RadioButton_Insert()
         {
-          
+
 
         }
 
- 
+
     }
 
-  
+
 
 
 }

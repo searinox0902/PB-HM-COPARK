@@ -35,5 +35,12 @@ namespace WpfApp1
             ventanaprincipal.Show();
             this.Close();
         }
+
+
+
+
+
+
+
     }
 }

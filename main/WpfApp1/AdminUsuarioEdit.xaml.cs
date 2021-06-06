@@ -28,5 +28,12 @@ namespace WpfApp1
         {
 
         }
+
+        private void btn_back(object sender, RoutedEventArgs e)
+        {
+            Principal ventanaprincipal = new Principal();
+            ventanaprincipal.Show();
+            this.Close();
+        }
     }
 }

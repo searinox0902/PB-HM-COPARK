@@ -59,17 +59,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminPuestoCrear.xaml.cs">
+      <DependentUpon>AdminPuestoCrear.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AdminUsuarioEdit.xaml.cs">
       <DependentUpon>AdminUsuarioEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Reservapuestoparking.xaml.cs">
       <DependentUpon>Reservapuestoparking.xaml</DependentUpon>
     </Compile>
-    <Page Include="Administracion-crear-puesto.xaml">
+    <Page Include="Administrarusuarioseliminar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Administrarusuarioseliminar.xaml">
+    <Page Include="AdminPuestoCrear.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -85,9 +88,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Administracion-crear-puesto.xaml.cs">
-      <DependentUpon>Administracion-crear-puesto.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Administrarusuarioseliminar.xaml.cs">
       <DependentUpon>Administrarusuarioseliminar.xaml</DependentUpon>
     </Compile>

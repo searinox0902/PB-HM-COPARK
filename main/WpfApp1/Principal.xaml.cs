@@ -25,7 +25,7 @@ namespace WpfApp1
         }
 
 
-        private void EditarPuesto(object sender, RoutedEventArgs e)
+        private void Editar_Puesto(object sender, RoutedEventArgs e)
         {
             AdminPuestosEdit AdminPuestosEditWindow = new AdminPuestosEdit();
 
@@ -33,8 +33,11 @@ namespace WpfApp1
             this.Close();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Crear_Puesto(object sender, RoutedEventArgs e)
         {
+            AdminPuestoCrear AdminPuestoCrear = new AdminPuestoCrear();
+            AdminPuestoCrear.Show();
+            this.Close();
 
         }
 

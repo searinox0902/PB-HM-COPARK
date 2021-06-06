@@ -9,7 +9,6 @@ using System.Windows.Controls;
 
 namespace WpfApp1
 {
-    /// ==================== COMO SACAR UN INDEX OF DE UNA LISTA MULTIDIMENSIONAL
     public partial class AdminPuestosEdit : Window
     {
 

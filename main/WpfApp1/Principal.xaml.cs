@@ -67,5 +67,12 @@ namespace WpfApp1
             AdminPuestosEdit.Show();
             this.Close();
         }
+
+        private void EditarUsuario(object sender, RoutedEventArgs e)
+        {
+            AdminUsuarioEdit AdminUsuarioEdit = new AdminUsuarioEdit();
+            AdminUsuarioEdit.Show();
+            this.Close();
+        }
     }
 }

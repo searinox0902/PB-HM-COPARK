@@ -45,7 +45,7 @@ namespace WpfApp1
             }
             if (ban == 0)
             {
-                MessageBox.Show("Dato no encontrado...");
+              //  MessageBox.Show("Dato no encontrado...");
             }
         }
 
@@ -61,7 +61,7 @@ namespace WpfApp1
                 txtContrasena.Text = "";
             }
             aux = aux + 1;
-            MessageBox.Show("Usuario registrado con exito");
+            //MessageBox.Show("Usuario registrado con exito");
         }
     }
 }

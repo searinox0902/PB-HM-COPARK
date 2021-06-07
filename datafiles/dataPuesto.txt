@@ -1,0 +1,15 @@
+A-001232
+False
+Silla bonita
+s
+s
+A-puestoeditado
+False
+Silla verde
+s
+s
+A-0032323
+False
+Silla SystemOutssd
+s
+s

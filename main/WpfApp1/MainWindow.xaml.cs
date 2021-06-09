@@ -34,40 +34,38 @@ namespace WpfApp1
             InitializeComponent();
 
            
-            string name     = "";
-            string pass     = "";
-            string estado   = "";
-            
-
-            listaUsuarios.Add(new DataUser() { Name =  "sebastian", Pass = "1234", State = false });
-            listaUsuarios.Add(new DataUser() { Name = "juan", Pass = "1234", State = false });
-
-            // escribir usuario
-            using (StreamWriter inputFile = new StreamWriter("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataPuesto.txt"))
-            {
-                foreach (DataUser item in listaUsuarios)
-                {
-                    inputFile.WriteLine(item.Name);
-                    inputFile.WriteLine(item.Pass);
-                    inputFile.WriteLine(item.State);
-                }
-            }
-
+            string  name         = "";
+            string  pass         = "";
+            string  estado       = "";          //recibe el estado del user
+            bool    estadoOutput   = false;
 
             //Leemos todos los Usuarios del arhivo plano
-            using (StreamReader inputFile = new StreamReader("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataPuesto.txt"))
+            using (StreamReader inputFile = new StreamReader("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataUser.txt"))
             {   
+
+
                 while (inputFile.Peek() >= 0)
                 {
-                    name    = inputFile.ReadLine();
-                    pass    = inputFile.ReadLine();
-                    estado  = inputFile.ReadLine();
-                   
-                    listaUsuarios.Add(new DataUser() { Name = inputFile.ReadLine(), Pass = inputFile.ReadLine(), State = Convert.ToBoolean(estado)});
+                 
+
+                    name = inputFile.ReadLine();
+                    pass = inputFile.ReadLine();
+                    estado = inputFile.ReadLine();
+
+                    //convertimos del string en el booleano
+                    if (estado == "false")
+                    {
+                        estadoOutput = false;
+                    }
+                    else if (estado == "true")
+                    {
+                        estadoOutput = true;
+                    }
+
+                    listaUsuarios.Add(new DataUser() { Name = inputFile.ReadLine(), Pass = inputFile.ReadLine(), State = estadoOutput });
                 } 
             }
 
-            MessageBox.Show(Convert.ToString(listaUsuarios.Count));
         }
 
         private void btnIniciar_Click(object sender, RoutedEventArgs e)
@@ -82,7 +80,10 @@ namespace WpfApp1
                    // ventanaprincipal.Show();
                    // this.Close();
                     ban = 1;
-                    MessageBox.Show("El usuario Existe...");
+                    MessageBox.Show("Usuario Existe...");
+                } else if (listaUsuarios[i].State == false)
+                {
+                    MessageBox.Show("El usuario está bloqueado, comuniquese con el Admin del sistema.");
                 }
                 else if ("admin" == txtUsuario.Text && "admin" == txtContrasena.Text)
                 {
@@ -110,7 +111,7 @@ namespace WpfApp1
             aux = aux + 1;
 
             if(txtUsuario.Text == "" || txtUsuario.Text == null ){
-                MessageBox.Show("Ingrese correctaente los datos");
+                MessageBox.Show("Ingrese correctamente los datos");
             }
             else
             {
@@ -121,9 +122,11 @@ namespace WpfApp1
                     {
                         outputFile.WriteLine(item.Name);
                         outputFile.WriteLine(item.Pass);
-                        outputFile.WriteLine(item.Pass);
+                        outputFile.WriteLine(Convert.ToString(item.State));
                     }
                 }
+
+                MessageBox.Show("Usuario registrado correctamente");
             }
         
  

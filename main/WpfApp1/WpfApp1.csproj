@@ -66,6 +66,9 @@
       <DependentUpon>AdminUsuarioEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataUser.cs" />
+    <Compile Include="PrincipalUser.xaml.cs">
+      <DependentUpon>PrincipalUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Reservapuestoparking.xaml.cs">
       <DependentUpon>Reservapuestoparking.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Principal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrincipalUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

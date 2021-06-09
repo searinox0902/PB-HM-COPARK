@@ -1,0 +1,37 @@
+﻿<Window x:Class="WpfApp1.PrincipalUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Principal" Width="960" Height="560">
+    <Grid>
+
+        <Rectangle Fill="#FF2F70FE" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="954" RenderTransformOrigin="0.5,0.5" Margin="0,0,-0.4,0"/>
+        <Button Content="ATRÁS" HorizontalAlignment="Left" Height="25" Margin="22,13,0,0" VerticalAlignment="Top" Width="91" Click="Btn_Back" Background="{x:Null}" Foreground="White" BorderBrush="White"/>
+        <Image HorizontalAlignment="Left" Height="25" Margin="793,18,0,0" VerticalAlignment="Top" Width="137" Source="main-logo-white.png"/>
+        <Rectangle Fill="#FFB7B7B7" HorizontalAlignment="Left" Height="1" Margin="4,103,0,0" VerticalAlignment="Top" Width="949" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Label x:Name="admin" Content="Usuario" HorizontalAlignment="Left" Height="26" Margin="109,66,0,0" VerticalAlignment="Top" Width="96" FontWeight="Bold" Background="White" Foreground="#FF919191"/>
+        <Label x:Name="admin_Copy" Content="OPCIONES DE USUARIO" HorizontalAlignment="Left" Height="31" Margin="124,158,0,0" VerticalAlignment="Top" Width="396" FontWeight="Bold" Background="White" Foreground="#FF919191" FontSize="14"/>
+        <Rectangle Fill="#FFF7F7F7" HorizontalAlignment="Left" Height="242" Margin="124,224,0,0" VerticalAlignment="Top" Width="201" Stroke="#FFDDDDDD"/>
+        <Rectangle Fill="#FFF7F7F7" HorizontalAlignment="Left" Height="242" Margin="378,224,0,0" VerticalAlignment="Top" Width="201" Stroke="#FFDDDDDD"/>
+        <Image HorizontalAlignment="Left" Height="38" Margin="141,239,0,0" VerticalAlignment="Top" Width="37" Source="icon-admin_1.png"/>
+        <Image HorizontalAlignment="Left" Height="38" Margin="396,239,0,0" VerticalAlignment="Top" Width="37" Source="icon-user.png"/>
+        <Label x:Name="admin_Copy1" Content="PUESTO" HorizontalAlignment="Left" Height="24" Margin="133,300,0,0" VerticalAlignment="Top" Width="167" FontWeight="Bold" Background="{x:Null}" Foreground="#FF919191" FontSize="10"/>
+        <Button Content="RESERVAR PUESTO" HorizontalAlignment="Left" Height="25" Margin="141,345,0,0" VerticalAlignment="Top" Width="104" Click="Reservar_Puesto" FontSize="9" Background="{x:Null}" Foreground="#FF2F70FE" BorderBrush="#FF2F70FE"/>
+        <Button Content="RESERVAR PARQUEADERO" HorizontalAlignment="Left" Height="25" Margin="141,382,0,0" VerticalAlignment="Top" Width="128" Click="Reservar_Parqueadero" FontSize="9" Background="{x:Null}" Foreground="#FF2F70FE" BorderBrush="#FF2F70FE"/>
+        <Button Content="EDITAR USUARIO" HorizontalAlignment="Left" Height="25" Margin="396,345,0,0" VerticalAlignment="Top" Width="104" Click="Editar_Usuario" FontSize="9" Background="{x:Null}" Foreground="#FF2F70FE" BorderBrush="#FF2F70FE"/>
+        <Label x:Name="admin_Copy17" Content="CONFIGURACIÓN DE USUARIO" HorizontalAlignment="Left" Height="24" Margin="396,300,0,0" VerticalAlignment="Top" Width="167" FontWeight="Bold" Background="{x:Null}" Foreground="#FF919191" FontSize="10"/>
+
+    </Grid>
+</Window>

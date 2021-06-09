@@ -76,6 +76,9 @@ namespace WpfApp1
 
         private void Btn_Back(object sender, RoutedEventArgs e)
         {
+            MainWindow InicioSesion = new MainWindow();
+            InicioSesion.Show();
+            this.Close();
         }
     }
 }

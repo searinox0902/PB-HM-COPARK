@@ -65,6 +65,7 @@
     <Compile Include="AdminUsuarioEdit.xaml.cs">
       <DependentUpon>AdminUsuarioEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataUser.cs" />
     <Compile Include="Reservapuestoparking.xaml.cs">
       <DependentUpon>Reservapuestoparking.xaml</DependentUpon>
     </Compile>

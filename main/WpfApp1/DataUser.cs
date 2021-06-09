@@ -10,6 +10,6 @@ namespace WpfApp1
     {
         public string   Name    { get; set; }
         public string   Pass    { get; set; }
-        public string   State   { get; set; }
+        public bool   State   { get; set; }
     }
 }

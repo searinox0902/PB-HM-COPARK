@@ -1,15 +1,6 @@
-A-001232
+sebastian
+1234
 False
-Silla bonita
-s
-s
-A-puestoeditado
+juan
+1234
 False
-Silla verde
-s
-s
-A-0032323
-False
-Silla SystemOutssd
-s
-s

@@ -25,26 +25,30 @@ namespace WpfApp1
     {
 
         ObservableCollection<DataPuesto> listaPuestos = new ObservableCollection<DataPuesto>();
+        string id = "";
+        bool estado;
+        string desc = "";
+        string dateInit = "";
+        string dateEnd = "";
 
         public Principal()
         {
             InitializeComponent();
 
-          
-
-          // leer id
+            // leer id
             using (StreamReader inputFile = new StreamReader("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataPuesto.txt"))
             {
-              
+                id = inputFile.ReadLine();
+                estado = Convert.ToBoolean(inputFile.ReadLine());
+                desc = inputFile.ReadLine();
+                dateInit = inputFile.ReadLine();
+                dateEnd = inputFile.ReadLine();
 
-                while(inputFile.Peek() >= 0)
+
+                while (inputFile.Peek() >= 0)
                 {   
-           
                     listaPuestos.Add(new DataPuesto() { id = inputFile.ReadLine(), estado = Convert.ToBoolean(inputFile.ReadLine()), desc = inputFile.ReadLine(), dateInit = inputFile.ReadLine(), dateEnd = inputFile.ReadLine() });
-
-                }
-                // listaPuestos.Add(new DataPuesto() { id = "pedro", estado = false, desc = "System.IO", dateInit = "s", dateEnd = "s" });
-
+                }               
             }
           
           // escribir id
@@ -107,14 +111,6 @@ namespace WpfApp1
 
         private void Btn_Back(object sender, RoutedEventArgs e)
         {
-        }
-
-        public void agg_puestos_quemados()
-        {
-
-            listaPuestos.Add(new DataPuesto() { id = "A-001", estado = false, desc = "Silla bonita", dateInit = "s", dateEnd = "s" });
-            listaPuestos.Add(new DataPuesto() { id = "A-002", estado = true, desc = "Silla verde", dateInit = "s", dateEnd = "s" });
-            listaPuestos.Add(new DataPuesto() { id = "A-003", estado = false, desc = "Silla roja", dateInit = "s", dateEnd = "s" });
         }
     }
 }

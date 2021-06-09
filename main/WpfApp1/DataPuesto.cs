@@ -16,6 +16,4 @@ namespace WpfApp1
         public string   dateInit    { get; set; }
         public string   dateEnd     { get; set; }
     }
-
-
 }

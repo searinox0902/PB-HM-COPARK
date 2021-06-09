@@ -60,7 +60,6 @@ namespace WpfApp1
         }
 
 
-
         private void seleccted_change(object sender, SelectionChangedEventArgs e)
         {
             if (ListBoxPuestos.SelectedItem != null)
@@ -114,7 +113,7 @@ namespace WpfApp1
         }
 
         // BOTON DE RETROCEDER
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btn_back(object sender, RoutedEventArgs e)
         {
             Principal ventanaprincipal = new Principal();
             ventanaprincipal.Show();

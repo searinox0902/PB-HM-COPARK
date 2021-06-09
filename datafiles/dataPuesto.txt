@@ -1,5 +1,5 @@
-A-001
-true
+A-00132323
+False
 silla roja
-0
-0
+s
+s

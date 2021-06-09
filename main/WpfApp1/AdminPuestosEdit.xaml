@@ -9,7 +9,7 @@
 
     <Grid>
         <Rectangle Fill="#FF2F70FE" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="954" RenderTransformOrigin="0.5,0.5" Margin="0,0,-0.4,0"/>
-        <Button Content="ATRÁS" HorizontalAlignment="Left" Height="25" Margin="24,12,0,0" VerticalAlignment="Top" Width="91" Click="Button_Click" Background="{x:Null}" Foreground="White" BorderBrush="White"/>
+        <Button Content="ATRÁS" HorizontalAlignment="Left" Height="25" Margin="24,12,0,0" VerticalAlignment="Top" Width="91" Click="btn_back" Background="{x:Null}" Foreground="White" BorderBrush="White"/>
         <Image HorizontalAlignment="Left" Height="25" Margin="793,18,0,0" VerticalAlignment="Top" Width="137" Source="main-logo-white.png"/>
         <Rectangle Fill="#FFB7B7B7" HorizontalAlignment="Left" Height="1" Margin="4,103,0,0" VerticalAlignment="Top" Width="949" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
@@ -30,7 +30,7 @@
 
         <TextBlock x:Name="CountPuestos" HorizontalAlignment="Left" Height="17" Margin="229,229,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold" Background="White" Foreground="#FF2F70FE"/>
 
-        <ListBox Name="ListBoxPuestos" HorizontalAlignment="Left" Height="182" Margin="109,251,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="seleccted_change">
+        <ListBox Name="ListBoxPuestos" HorizontalAlignment="Left" Height="247" Margin="109,251,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="seleccted_change">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="2">

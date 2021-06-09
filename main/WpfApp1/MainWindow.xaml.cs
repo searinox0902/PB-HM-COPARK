@@ -22,47 +22,24 @@ namespace WpfApp1
 
     public partial class MainWindow : Window
     {
-        //List<string> usuario = new List<string>();
-        //List<string> contrasena = new List<string>();
 
         List<DataUser> listaUsuarios = new List<DataUser>();
 
         int aux = 0;
-       
+
         public MainWindow()
         {
             InitializeComponent();
 
-           
-            string  name         = "";
-            string  pass         = "";
-            string  estado       = "";          //recibe el estado del user
-            bool    estadoOutput   = false;
-
             //Leemos todos los Usuarios del arhivo plano
             using (StreamReader inputFile = new StreamReader("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataUser.txt"))
-            {   
-
+            {
+                int i = 0;
 
                 while (inputFile.Peek() >= 0)
                 {
-                 
-
-                    name = inputFile.ReadLine();
-                    pass = inputFile.ReadLine();
-                    estado = inputFile.ReadLine();
-
-                    //convertimos del string en el booleano
-                    if (estado == "false")
-                    {
-                        estadoOutput = false;
-                    }
-                    else if (estado == "true")
-                    {
-                        estadoOutput = true;
-                    }
-
-                    listaUsuarios.Add(new DataUser() { Name = inputFile.ReadLine(), Pass = inputFile.ReadLine(), State = estadoOutput });
+                    listaUsuarios.Add(new DataUser() { Name = inputFile.ReadLine(), Pass = inputFile.ReadLine(), State = Convert.ToBoolean(inputFile.ReadLine()) });
+                    i++;
                 } 
             }
 
@@ -71,29 +48,38 @@ namespace WpfApp1
         private void btnIniciar_Click(object sender, RoutedEventArgs e)
         {
             int i = 0, aux = listaUsuarios.Count, ban = 0;
+            bool estadoUser;
+
             while (i < aux)
             {
-            
                 if (listaUsuarios[i].Name == txtUsuario.Text && listaUsuarios[i].Pass == txtContrasena.Text)
                 {
-                    Principal ventanaprincipal = new Principal();
-                   // ventanaprincipal.Show();
-                   // this.Close();
-                    ban = 1;
-                    MessageBox.Show("Usuario Existe...");
-                } else if (listaUsuarios[i].State == false)
-                {
-                    MessageBox.Show("El usuario está bloqueado, comuniquese con el Admin del sistema.");
-                }
-                else if ("admin" == txtUsuario.Text && "admin" == txtContrasena.Text)
-                {
-                    Principal ventanaprincipal = new Principal();
-                    ventanaprincipal.Show();
-                    this.Close();
-                    ban = 1;
-                }
+
+                    estadoUser = Convert.ToBoolean(listaUsuarios[i].State);
+                    MessageBox.Show(Convert.ToString(estadoUser));
+                
+                    if (estadoUser == false)
+                    {
+                        MessageBox.Show("Usuario Está Bloqueado, comuniquese con el Administrador.");
+                    }
+                    else
+                    {                    
+                        MessageBox.Show("Usuario No está Bloqueado, puede ingresar :).");
+                        //
+                    }
+                } 
+                
                 i++;
             }
+
+            if ("admin" == txtUsuario.Text && "admin" == txtContrasena.Text)
+            {
+                Principal ventanaprincipal = new Principal();
+                ventanaprincipal.Show();
+                this.Close();
+                ban = 1;
+            }
+
             if (ban == 0)
             {
               MessageBox.Show("Usuario no Registrado...");

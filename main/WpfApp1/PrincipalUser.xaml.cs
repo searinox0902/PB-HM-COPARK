@@ -21,7 +21,7 @@ namespace WpfApp1
     {
         ObservableCollection    <DataPuesto>    listaPuestos      =   new ObservableCollection<DataPuesto>  ();
         ObservableCollection    <DataParking>   listaParking      =   new ObservableCollection<DataParking> ();
-        ObservableCollection    <DataUser>      listaUser         =   new ObservableCollection<DataUser>    ();
+        ObservableCollection    <DataUser>      ListaUserEdit =   new ObservableCollection<DataUser>    ();
        
         public PrincipalUser()
         {   
@@ -66,7 +66,7 @@ namespace WpfApp1
             {
                 while (inputFileUser.Peek() >= 0)
                 {
-                    listaUser.Add(new DataUser() { Name = inputFileUser.ReadLine(), Pass = inputFileUser.ReadLine(), State = Convert.ToBoolean(inputFileUser.ReadLine()) });
+                    ListaUserEdit.Add(new DataUser() { Name = inputFileUser.ReadLine(), Pass = inputFileUser.ReadLine(), State = Convert.ToBoolean(inputFileUser.ReadLine()) });
                 }
             }
         }
@@ -88,11 +88,11 @@ namespace WpfApp1
 
         public void Editar_Usuario(object sender, RoutedEventArgs e)
         {
-            /*
-            UserEdit userEdit = new UserEdit(listaUser);
+           
+            UserEdit userEdit = new UserEdit(ListaUserEdit);
             userEdit.Show();
             this.Close();
-            */
+            
         }
 
         public void Btn_Back(object sender, RoutedEventArgs e)

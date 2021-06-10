@@ -32,7 +32,8 @@ namespace WpfApp1
         {
             InitializeComponent();
             Lista_User = Usuarios;
-            listDeUsuarios.ItemsSource = Lista_User;
+            listDeNombres.ItemsSource = Lista_User;
+            MessageBox.Show(Lista_User[0].Name);
             Contador();
         }
         
@@ -52,9 +53,9 @@ namespace WpfApp1
         //Boton de Editar
         private void Button_Editar_Click(object sender, RoutedEventArgs e)
         {
-            if (listDeUsuarios.SelectedItem != null)
+            if (listDeNombres.SelectedItem != null)
             {
-                index = listDeUsuarios.SelectedIndex;
+                index = listDeNombres.SelectedIndex;
                 Lista_User.RemoveAt(index);
                 Lista_User.Insert(index, new DataUser() { Name = Nombre_us.Text, Pass = Contrasena_us.Text, State = estado });
             }
@@ -78,6 +79,20 @@ namespace WpfApp1
             Principal ventanaprincipal = new Principal();
             ventanaprincipal.Show();
             this.Close();
+        }
+
+        //ListBox para mostrar los datos del usuario
+        private void listDeNombres_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (listDeNombres.SelectedItem != null)
+            {
+                bool estado = (listDeNombres.SelectedItem as DataUser).State;
+
+                Nombre_us.Text = (listDeNombres.SelectedItem as DataUser).Name;
+                Contrasena_us.Text = (listDeNombres.SelectedItem as DataUser).Pass;
+            }
+
+            Contador();
         }
     }
 }

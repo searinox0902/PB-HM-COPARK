@@ -40,6 +40,7 @@ namespace WpfApp1
                 }               
             }
         }
+
         // ===================  ADMIN PUESTO =============== //
 
         private void Editar_Puesto(object sender, RoutedEventArgs e)

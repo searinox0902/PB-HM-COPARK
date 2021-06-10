@@ -72,6 +72,9 @@
     <Compile Include="Reservapuestoparking.xaml.cs">
       <DependentUpon>Reservapuestoparking.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserReservar.xaml.cs">
+      <DependentUpon>UserReservar.xaml</DependentUpon>
+    </Compile>
     <Page Include="Administrarusuarioseliminar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -116,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Reservapuestoparking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserReservar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

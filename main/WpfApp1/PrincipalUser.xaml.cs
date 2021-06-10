@@ -12,35 +12,37 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using System.Collections.ObjectModel;
 
 namespace WpfApp1
 {
   
     public partial class PrincipalUser : Window
     {
-        List<DataUser> listaUsuarios = new List<DataUser>();
+        ObservableCollection<DataPuesto> listaPuestos = new ObservableCollection<DataPuesto>();
 
         public PrincipalUser()
         {
             InitializeComponent();
 
-            //Leemos todos los Usuarios del arhivo plano
-            using (StreamReader inputFile = new StreamReader("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataUser.txt"))
+       
+            // leer archivo plano dataPuesto
+            using (StreamReader inputFile = new StreamReader("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataPuesto.txt"))
             {
-                int i = 0;
 
                 while (inputFile.Peek() >= 0)
                 {
-                    listaUsuarios.Add(new DataUser() { Name = inputFile.ReadLine(), Pass = inputFile.ReadLine(), State = Convert.ToBoolean(inputFile.ReadLine()) });
-                    i++;
+                    listaPuestos.Add(new DataPuesto() { id = inputFile.ReadLine(), estado = Convert.ToBoolean(inputFile.ReadLine()), desc = inputFile.ReadLine(), dateInit = inputFile.ReadLine(), dateEnd = inputFile.ReadLine() });
                 }
             }
         }
 
-      
+
         private void Reservar_Puesto(object sender, RoutedEventArgs e)
         {
-
+            UserReservar userReservar = new UserReservar(listaPuestos);
+            userReservar.Show();
+            this.Close();
         }
 
         private void Reservar_Parqueadero(object sender, RoutedEventArgs e)

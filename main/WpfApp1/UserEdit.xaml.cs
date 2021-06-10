@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,18 +16,15 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// Lógica de interacción para Reservapuestoparking.xaml
+    /// Interaction logic for UserEdit.xaml
     /// </summary>
-    public partial class Reservapuestoparking : Window
+    public partial class UserEdit : Window
     {
-        public Reservapuestoparking()
+        ObservableCollection<DataParking> ListaUserEdit = new ObservableCollection<DataParking>();
+
+        public UserEdit(ObservableCollection<DataParking> ListaUserEdit)
         {
             InitializeComponent();
-        }
-
-        private void btnatras_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

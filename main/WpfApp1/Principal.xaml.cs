@@ -25,7 +25,8 @@ namespace WpfApp1
     {
 
         ObservableCollection<DataPuesto> listaPuestos = new ObservableCollection<DataPuesto>();
-            
+        ObservableCollection<DataUser> ListaUsuario = new ObservableCollection<DataUser>();
+
         public Principal()
         {
             InitializeComponent();
@@ -63,6 +64,10 @@ namespace WpfApp1
 
         private void Editar_Usuario(object sender, RoutedEventArgs e)
         {
+            AdminUsuarioEdit VentanaEditarUserWindow = new AdminUsuarioEdit(ListaUsuario);
+
+            VentanaEditarUserWindow.Show();
+            this.Close();
         }
 
         private void Eliminar_Usuario(object sender, RoutedEventArgs e)

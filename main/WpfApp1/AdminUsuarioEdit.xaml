@@ -9,7 +9,7 @@
     <Grid>
         <Rectangle Fill="#FF2F70FE" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="954" RenderTransformOrigin="0.5,0.5" Margin="0,0,-0.4,0"/>
         <Image HorizontalAlignment="Left" Height="25" Margin="793,18,0,0" VerticalAlignment="Top" Width="137" Source="main-logo-white.png"/>
-        <Button Content="ATRÁS" HorizontalAlignment="Left" Height="25" Margin="24,12,0,0" VerticalAlignment="Top" Width="91" Background="{x:Null}" Foreground="White" BorderBrush="White"/>
+        <Button Content="ATRÁS" HorizontalAlignment="Left" Height="25" Margin="24,12,0,0" VerticalAlignment="Top" Width="91" Background="{x:Null}" Foreground="White" BorderBrush="White" Click="Button_Click"/>
         <Rectangle Fill="#FFB7B7B7" HorizontalAlignment="Left" Height="1" Margin="4,103,0,0" VerticalAlignment="Top" Width="949" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -23,10 +23,12 @@
         <Label x:Name="admin_Edit" Content="Administración / Editar Usuario" HorizontalAlignment="Left" Height="26" Margin="109,66,0,0" VerticalAlignment="Top" Width="247" FontWeight="Bold" Background="White" Foreground="#FF919191"/>
         <Label x:Name="admin_usuedit" Content="ADMINISTRAR USUARIO (EDITAR)" HorizontalAlignment="Left" Height="31" Margin="165,138,0,0" VerticalAlignment="Top" Width="396" FontWeight="Bold" Background="White" Foreground="#FF919191" FontSize="14"/>
         <Image HorizontalAlignment="Left" Height="38" Margin="122,134,0,0" VerticalAlignment="Top" Width="37" Source="icon-admin_1.png"/>
-        <Label x:Name="admin_usuedit2" Content="LISTA DE NOMBRES:" HorizontalAlignment="Left" Height="26" Margin="109,225,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold" Background="White" Foreground="#FF919191"/>
+        <Label x:Name="admin_usuedit2" Content="LISTA DE NOMBRES:" HorizontalAlignment="Left" Height="26" Margin="109,225,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold" Background="White" Foreground="#FF919191" FontSize="14"/>
         <Rectangle Fill="#FFF7F7F7" HorizontalAlignment="Left" Height="242" Margin="432,256,0,0" VerticalAlignment="Top" Width="460" Stroke="#FFDDDDDD"/>
-        <Label x:Name="admin_usuedit3" Content="Usuario:" HorizontalAlignment="Left" Height="26" Margin="432,225,0,0" VerticalAlignment="Top" Width="247" FontWeight="Bold" Background="White" Foreground="#FF919191"/>
+        <Label x:Name="admin_usuedit3" Content="Usuario:" HorizontalAlignment="Left" Height="26" Margin="432,221,0,0" VerticalAlignment="Top" Width="247" FontWeight="Bold" Background="White" Foreground="#FF919191" FontSize="14"/>
 
+        <TextBlock x:Name="CountUsuarios" HorizontalAlignment="Left" Height="17" Margin="229,229,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold" Background="White" Foreground="#FF2F70FE" FontSize="14"/>
+        
         <TextBlock x:Name="Nombre" HorizontalAlignment="Left" Height="24" Margin="460,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Foreground="#FF525252" FontSize="14"><Run Text="Nombre"/><LineBreak/><Run/></TextBlock>
         <TextBox x:Name="Nombre_us"  HorizontalAlignment="Left" Height="24" Margin="460,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
 
@@ -34,11 +36,10 @@
         <TextBox x:Name="Contrasena_us"  HorizontalAlignment="Left" Height="24" Margin="460,372,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
 
         <TextBlock x:Name="estate" HorizontalAlignment="Left" Height="24" Margin="460,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Foreground="#FF525252" FontSize="14"><Run Text="Estado"/><LineBreak/><Run/></TextBlock>
-        <TextBox x:Name="descrip_estate"  HorizontalAlignment="Left" Height="24" Margin="460,442,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
 
-        <Button Content="EDITAR" HorizontalAlignment="Left" Margin="793,447,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="Button_Editar" Content="EDITAR" HorizontalAlignment="Left" Margin="793,440,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Click="Button_Editar_Click"/>
 
-        <ListBox Name="listaDePuestos" HorizontalAlignment="Left" Height="182" Margin="109,251,0,0" VerticalAlignment="Top" Width="260">
+        <ListBox x:Name="listDeUsuarios" HorizontalAlignment="Left" Height="182" Margin="109,251,0,0" VerticalAlignment="Top" Width="260">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="2">
@@ -53,5 +54,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <RadioButton x:Name="RadioActive" Content="Activo" HorizontalAlignment="Left" Margin="460,439,0,0" VerticalAlignment="Top" FontSize="14" Checked="RadioActive_Checked"/>
+        <RadioButton x:Name="RadioDisable" Content="Inactivo" HorizontalAlignment="Left" Margin="572,439,0,0" VerticalAlignment="Top" FontSize="14"/>
     </Grid>
 </Window>

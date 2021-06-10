@@ -56,31 +56,41 @@ namespace WpfApp1
                 {
 
                     estadoUser = Convert.ToBoolean(listaUsuarios[i].State);
-                    MessageBox.Show(Convert.ToString(estadoUser));
                 
                     if (estadoUser == false)
                     {
-                        MessageBox.Show("Usuario Está Bloqueado, comuniquese con el Administrador.");
+                        ban = 2;
                     }
                     else
                     {                    
-                        MessageBox.Show("Usuario No está Bloqueado, puede ingresar :).");
-                        //
+                        ban = 1;
                     }
-                } 
-                
+                   
+                }
                 i++;
             }
+
+
+            if (ban == 1)
+            {
+                PrincipalUser principalUser = new PrincipalUser();
+                principalUser.Show();
+                this.Close();
+            }
+
+            if (ban == 2)
+            {
+                MessageBox.Show("Usuario Está Bloqueado, comuniquese con el Administrador.");
+            }
+
+
 
             if ("admin" == txtUsuario.Text && "admin" == txtContrasena.Text)
             {
                 Principal ventanaprincipal = new Principal();
                 ventanaprincipal.Show();
                 this.Close();
-                ban = 1;
-            }
-
-            if (ban == 0)
+            }else if (ban == 0)
             {
               MessageBox.Show("Usuario no Registrado...");
             }

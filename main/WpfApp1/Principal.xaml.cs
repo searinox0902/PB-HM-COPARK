@@ -40,6 +40,7 @@ namespace WpfApp1
                 }               
             }
         }
+
         // ===================  ADMIN PUESTO =============== //
 
         private void Editar_Puesto(object sender, RoutedEventArgs e)
@@ -76,6 +77,9 @@ namespace WpfApp1
 
         private void Btn_Back(object sender, RoutedEventArgs e)
         {
+            MainWindow InicioSesion = new MainWindow();
+            InicioSesion.Show();
+            this.Close();
         }
     }
 }

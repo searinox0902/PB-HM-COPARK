@@ -23,12 +23,12 @@
         <Label x:Name="admin_Edit" Content="Administración / Editar Usuario" HorizontalAlignment="Left" Height="26" Margin="109,66,0,0" VerticalAlignment="Top" Width="247" FontWeight="Bold" Background="White" Foreground="#FF919191"/>
         <Label x:Name="admin_usuedit" Content="ADMINISTRAR USUARIO (EDITAR)" HorizontalAlignment="Left" Height="31" Margin="165,138,0,0" VerticalAlignment="Top" Width="396" FontWeight="Bold" Background="White" Foreground="#FF919191" FontSize="14"/>
         <Image HorizontalAlignment="Left" Height="38" Margin="122,134,0,0" VerticalAlignment="Top" Width="37" Source="icon-admin_1.png"/>
-        <Label x:Name="admin_usuedit2" Content="LISTA DE NOMBRES:" HorizontalAlignment="Left" Height="26" Margin="109,225,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold" Background="White" Foreground="#FF919191" FontSize="14"/>
+        <Label x:Name="admin_usuedit2" Content="LISTA DE NOMBRES:" HorizontalAlignment="Left" Height="26" Margin="109,225,0,0" VerticalAlignment="Top" Width="149" FontWeight="Bold" Background="White" Foreground="#FF919191" FontSize="14"/>
         <Rectangle Fill="#FFF7F7F7" HorizontalAlignment="Left" Height="242" Margin="432,256,0,0" VerticalAlignment="Top" Width="460" Stroke="#FFDDDDDD"/>
         <Label x:Name="admin_usuedit3" Content="Usuario:" HorizontalAlignment="Left" Height="26" Margin="432,221,0,0" VerticalAlignment="Top" Width="247" FontWeight="Bold" Background="White" Foreground="#FF919191" FontSize="14"/>
 
-        <TextBlock x:Name="CountUsuarios" HorizontalAlignment="Left" Height="17" Margin="229,229,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold" Background="White" Foreground="#FF2F70FE" FontSize="14"/>
-        
+        <TextBlock x:Name="CountUsuarios" HorizontalAlignment="Left" Height="17" Margin="273,230,0,0" VerticalAlignment="Top" Width="104" FontWeight="Bold" Background="White" Foreground="#FF2F70FE" FontSize="14"/>
+
         <TextBlock x:Name="Nombre" HorizontalAlignment="Left" Height="24" Margin="460,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Foreground="#FF525252" FontSize="14"><Run Text="Nombre"/><LineBreak/><Run/></TextBlock>
         <TextBox x:Name="Nombre_us"  HorizontalAlignment="Left" Height="24" Margin="460,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
 
@@ -39,14 +39,16 @@
 
         <Button x:Name="Button_Editar" Content="EDITAR" HorizontalAlignment="Left" Margin="793,440,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Click="Button_Editar_Click"/>
 
-        <ListBox x:Name="listDeNombres" HorizontalAlignment="Left" Height="182" Margin="109,251,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="listDeNombres_SelectionChanged">
+        <RadioButton x:Name="RadioActive" Content="Activo" HorizontalAlignment="Left" Margin="460,439,0,0" VerticalAlignment="Top" FontSize="14" Checked="RadioActive_Checked"/>
+        <RadioButton x:Name="RadioDisable" Content="Inactivo" HorizontalAlignment="Left" Margin="572,439,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <ListBox x:Name="ListBoxUser" HorizontalAlignment="Left" Height="247" Margin="109,251,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="seleccted_change">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="2">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0"></TextBlock>
+                        <TextBlock Grid.Column="0" Text="{Binding Name}"/>
 
                     </Grid>
 
@@ -54,7 +56,5 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <RadioButton x:Name="RadioActive" Content="Activo" HorizontalAlignment="Left" Margin="460,439,0,0" VerticalAlignment="Top" FontSize="14" Checked="RadioActive_Checked"/>
-        <RadioButton x:Name="RadioDisable" Content="Inactivo" HorizontalAlignment="Left" Margin="572,439,0,0" VerticalAlignment="Top" FontSize="14"/>
     </Grid>
 </Window>

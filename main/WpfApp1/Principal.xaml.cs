@@ -40,6 +40,19 @@ namespace WpfApp1
                     listaPuestos.Add(new DataPuesto() { id = inputFile.ReadLine(), estado = Convert.ToBoolean(inputFile.ReadLine()), desc = inputFile.ReadLine(), dateInit = inputFile.ReadLine(), dateEnd = inputFile.ReadLine() });
                 }               
             }
+
+            // Leer archivo datauser
+            using (StreamReader inputFileUser = new StreamReader("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataUser.txt"))
+            {
+
+                while (inputFileUser.Peek() >= 0)
+                {
+                    string Name = inputFileUser.ReadLine();
+                    string Pass = inputFileUser.ReadLine();
+                    bool State = Convert.ToBoolean(inputFileUser.ReadLine());
+                    ListaUsuario.Add(new DataUser() { Name = Name, Pass = Pass, State = State});
+                }
+            }
         }
         // ===================  ADMIN PUESTO =============== //
 

@@ -32,8 +32,7 @@ namespace WpfApp1
         {
             InitializeComponent();
             Lista_User = Usuarios;
-            listDeNombres.ItemsSource = Lista_User;
-            MessageBox.Show(Lista_User[0].Name);
+            ListBoxUser.ItemsSource = Lista_User;
             Contador();
         }
         
@@ -53,24 +52,31 @@ namespace WpfApp1
         //Boton de Editar
         private void Button_Editar_Click(object sender, RoutedEventArgs e)
         {
-            if (listDeNombres.SelectedItem != null)
+            if (ListBoxUser.SelectedItem != null)
             {
-                index = listDeNombres.SelectedIndex;
+                index = ListBoxUser.SelectedIndex;
                 Lista_User.RemoveAt(index);
                 Lista_User.Insert(index, new DataUser() { Name = Nombre_us.Text, Pass = Contrasena_us.Text, State = estado });
-            }
-            MessageBox.Show("El usuario ha sido editado ");
+                MessageBox.Show("El usuario ha sido editado ");
 
-            //Guarda lista actulizada en el archivo plano 
-            using (StreamWriter outputFile = new StreamWriter("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataUser.txt"))
-            {
-                foreach (DataUser item in Lista_User)
+                //Guarda lista actulizada en el archivo plano 
+                using (StreamWriter outputFile = new StreamWriter("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataUser.txt"))
                 {
-                    outputFile.WriteLine(item.Name);
-                    outputFile.WriteLine(item.Pass);
-                    outputFile.WriteLine(item.State);
+                    foreach (DataUser item in Lista_User)
+                    {
+                        outputFile.WriteLine(item.Name);
+                        outputFile.WriteLine(item.Pass);
+                        outputFile.WriteLine(item.State);
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("El usuario No se edito ");
+            }
+           
+
+           
         }
 
         //Boton de Atras
@@ -82,14 +88,13 @@ namespace WpfApp1
         }
 
         //ListBox para mostrar los datos del usuario
-        private void listDeNombres_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void seleccted_change(object sender, SelectionChangedEventArgs e)
         {
-            if (listDeNombres.SelectedItem != null)
+            if (ListBoxUser.SelectedItem != null)
             {
-                bool estado = (listDeNombres.SelectedItem as DataUser).State;
-
-                Nombre_us.Text = (listDeNombres.SelectedItem as DataUser).Name;
-                Contrasena_us.Text = (listDeNombres.SelectedItem as DataUser).Pass;
+                Nombre_us.Text = (ListBoxUser.SelectedItem as DataUser).Name;
+                bool estado = (ListBoxUser.SelectedItem as DataUser).State;
+                Contrasena_us.Text = (ListBoxUser.SelectedItem as DataUser).Pass;
             }
 
             Contador();

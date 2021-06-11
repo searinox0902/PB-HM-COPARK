@@ -57,7 +57,10 @@ namespace WpfApp1
 
         private void Eliminar_Puesto(object sender, RoutedEventArgs e)
         {
+            Administrarusuarioseliminar administrarusuarioseliminar = new Administrarusuarioseliminar(listaPuestos);
 
+            administrarusuarioseliminar.Show();
+            this.Close();
         }
 
         // ===================  ADMIN USER =============== //

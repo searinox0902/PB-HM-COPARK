@@ -38,7 +38,7 @@ namespace WpfApp1
 
             if (date != "" && date != null && ListBoxPuestos.SelectedItem != null)
             {
-               
+
                 if (listaPuestosReservar[index].estado == true)
                 {
                     index = ListBoxPuestos.SelectedIndex;
@@ -49,7 +49,7 @@ namespace WpfApp1
                     status_update(false);
 
                     MessageBox.Show("se ha reservado");
-                   
+
 
                     // SE GUARDA LA LISTA EDITADA EN EL ARCHIVO PLANO
                     using (StreamWriter outputFile = new StreamWriter("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataPuesto.txt"))
@@ -64,12 +64,12 @@ namespace WpfApp1
                             outputFile.WriteLine(item.dateEnd);
                         }
                     }
-                    
+
                 }
                 else
                 {
                     MessageBox.Show("Este puesto ya se ha reservado");
-                } 
+                }
             }
             else
             {
@@ -77,7 +77,7 @@ namespace WpfApp1
             }
         }
 
-     
+
         private void seleccted_change(object sender, SelectionChangedEventArgs e)
         {
             if (ListBoxPuestos.SelectedItem != null)
@@ -94,8 +94,8 @@ namespace WpfApp1
         }
 
         public void status_update(bool state)
-        {   
-            
+        {
+
             if (state == false)
             {
                 PuestoState.Text = "Reservado";

@@ -47,7 +47,7 @@ namespace WpfApp1
                     index = ListBoxPark.SelectedIndex;
                     ListaUserParking.RemoveAt(index);
 
-                    ListaUserParking.Insert(index, new DataParking() { id = ParkId.Text, estado = false,  dateInit = date });
+                    ListaUserParking.Insert(index, new DataParking() { id = ParkId.Text, estado = false, dateInit = date });
 
                     status_update(false);
 
@@ -94,7 +94,7 @@ namespace WpfApp1
             }
         }
 
-      
+
         private void selecteDate(object sender, SelectionChangedEventArgs e)
         {
             date = Convert.ToString(fechaReserva.SelectedDate.Value);

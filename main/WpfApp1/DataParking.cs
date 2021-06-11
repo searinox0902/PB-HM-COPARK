@@ -8,8 +8,8 @@ namespace WpfApp1
 {
     public class DataParking
     {
-        public string id        { get; set; }
-        public bool   estado    { get; set; }
-        public string dateInit  { get; set; }
+        public string id { get; set; }
+        public bool estado { get; set; }
+        public string dateInit { get; set; }
     }
 }

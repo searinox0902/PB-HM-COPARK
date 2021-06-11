@@ -29,7 +29,7 @@ namespace WpfApp1
             ListaUserEdit = ListaUser;
         }
 
-       
+
         private void btn_editar(object sender, RoutedEventArgs e)
         {
             int i = 0, aux = ListaUserEdit.Count, ban = 0;
@@ -42,11 +42,11 @@ namespace WpfApp1
             {
                 if (ListaUserEdit[i].Name == txtUsuario.Text && ListaUserEdit[i].Pass == txtContrasena.Text)
                 {
-                 
-                    if ( 
+
+                    if (
                         (txtNewName.Text != "" && txtNewName != null) &&
-                        (txtNewPass.Text != "" && txtNewPass.Text != null) && 
-                        (txtNewPassConfirm.Text != "" && txtNewPassConfirm.Text != null) && 
+                        (txtNewPass.Text != "" && txtNewPass.Text != null) &&
+                        (txtNewPassConfirm.Text != "" && txtNewPassConfirm.Text != null) &&
                         (txtNewPass.Text == txtNewPassConfirm.Text)
                        )
                     {
@@ -58,7 +58,7 @@ namespace WpfApp1
 
                         ListaUserEdit.RemoveAt(i);
                         ListaUserEdit.Insert(i, new DataUser() { Name = username, State = state, Pass = pass });
-                        
+
                         //GUARDAMOS LA EDICION DEL USUARIO
 
                         using (StreamWriter outputFile = new StreamWriter("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataUser.txt"))
@@ -70,25 +70,28 @@ namespace WpfApp1
                                 outputFile.WriteLine(Convert.ToString(item.State));
                             }
                         }
-                    }else{
+                    }
+                    else
+                    {
                         MessageBox.Show("Datos incompletos o no Confirmados");
                     }
 
 
                     i = aux;
-                   
+
 
                 }
-                else if (i == aux) { 
-                   
-                     MessageBox.Show("Credenciales Incorrectas, No puede editar este usuario");
+                else if (i == aux)
+                {
+
+                    MessageBox.Show("Credenciales Incorrectas, No puede editar este usuario");
                 }
                 else
                 {
                     MessageBox.Show("Ingrese datos en los campos");
                     i = aux;
                 }
-                
+
 
                 i++;
             }

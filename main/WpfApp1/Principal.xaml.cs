@@ -53,6 +53,9 @@ namespace WpfApp1
 
         private void Crear_Puesto(object sender, RoutedEventArgs e)
         {
+            AdminPuestoCrear AdminPuestoCrear = new AdminPuestoCrear(listaPuestos);
+            AdminPuestoCrear.Show();
+            this.Close();
         }
 
         private void Eliminar_Puesto(object sender, RoutedEventArgs e)

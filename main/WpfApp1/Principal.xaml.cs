@@ -25,7 +25,8 @@ namespace WpfApp1
     {
 
         ObservableCollection<DataPuesto> listaPuestos = new ObservableCollection<DataPuesto>();
-            
+        ObservableCollection<DataUser> ListaUsuario = new ObservableCollection<DataUser>();
+
         public Principal()
         {
             InitializeComponent();
@@ -38,6 +39,19 @@ namespace WpfApp1
                 {   
                     listaPuestos.Add(new DataPuesto() { id = inputFile.ReadLine(), estado = Convert.ToBoolean(inputFile.ReadLine()), desc = inputFile.ReadLine(), dateInit = inputFile.ReadLine(), dateEnd = inputFile.ReadLine() });
                 }               
+            }
+
+            // Leer archivo datauser
+            using (StreamReader inputFileUser = new StreamReader("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataUser.txt"))
+            {
+
+                while (inputFileUser.Peek() >= 0)
+                {
+                    string Name = inputFileUser.ReadLine();
+                    string Pass = inputFileUser.ReadLine();
+                    bool State = Convert.ToBoolean(inputFileUser.ReadLine());
+                    ListaUsuario.Add(new DataUser() { Name = Name, Pass = Pass, State = State});
+                }
             }
         }
 
@@ -64,6 +78,10 @@ namespace WpfApp1
 
         private void Editar_Usuario(object sender, RoutedEventArgs e)
         {
+            AdminUsuarioEdit VentanaEditarUserWindow = new AdminUsuarioEdit(ListaUsuario);
+
+            VentanaEditarUserWindow.Show();
+            this.Close();
         }
 
         private void Eliminar_Usuario(object sender, RoutedEventArgs e)

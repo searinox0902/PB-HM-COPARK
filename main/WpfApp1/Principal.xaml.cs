@@ -85,18 +85,23 @@ namespace WpfApp1
         private void Editar_Usuario(object sender, RoutedEventArgs e)
         {
             AdminUsuarioEdit VentanaEditarUserWindow = new AdminUsuarioEdit(ListaUsuario);
-
             VentanaEditarUserWindow.Show();
             this.Close();
         }
 
         private void Eliminar_Usuario(object sender, RoutedEventArgs e)
         {
+            AdminUserEliminar VentanaEliminarUsuario = new AdminUserEliminar(ListaUsuario);
+            VentanaEliminarUsuario.Show();
+            this.Close();
         }
 
 
         private void Crear_Usuario(object sender, RoutedEventArgs e)
         {
+            AdminCrearUser crearUser = new AdminCrearUser(ListaUsuario);
+            crearUser.Show();
+            this.Close();
         }
 
         private void Btn_Back(object sender, RoutedEventArgs e)

@@ -36,6 +36,7 @@ namespace WpfApp1
         // BOTON DE EDITAR EDITAR 
         public void Edit_Puesto(object sender, RoutedEventArgs e)
         {
+
             if (ListBoxPuestos.SelectedItem != null)
             {
                 index = ListBoxPuestos.SelectedIndex;
@@ -57,7 +58,7 @@ namespace WpfApp1
                   }
               } 
         }
-
+       
 
         private void seleccted_change(object sender, SelectionChangedEventArgs e)
         {

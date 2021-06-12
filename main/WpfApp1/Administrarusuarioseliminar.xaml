@@ -45,17 +45,17 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <TextBlock x:Name="identidicador" HorizontalAlignment="Left" Height="24" Margin="460,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Foreground="#FF525252" FontSize="14"><Run Text="Identificador"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="identidicador" HorizontalAlignment="Left" Height="24" Margin="460,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Foreground="#FF525252" FontSize="14"><Run Text="Identifica"/><Run Text="dor"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
         <TextBlock x:Name="Estado" HorizontalAlignment="Left" Height="24" Margin="460,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Foreground="#FF525252" FontSize="14"><Run Text="Estado"/><LineBreak/><Run/></TextBlock>
 
         <TextBlock x:Name="Descripcion" HorizontalAlignment="Left" Height="24" Margin="460,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Foreground="#FF525252" FontSize="14"><Run Text="Descripción"/><LineBreak/><Run/></TextBlock>
 
-        <Button Content="ELIMINAR" HorizontalAlignment="Left" Margin="793,451,0,0" VerticalAlignment="Top" Width="75" Click="Edit_Puesto"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="460,285,0,0" VerticalAlignment="Top" Width="151"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="460,357,0,0" VerticalAlignment="Top" Width="151"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="460,412,0,0" VerticalAlignment="Top" Width="151"/>
+        <Button Content="ELIMINAR" HorizontalAlignment="Left" Margin="793,451,0,0" VerticalAlignment="Top" Width="75" Click="Elim_Puesto"/>
+        <TextBlock Name="txtIdentificador"  HorizontalAlignment="Left" Margin="460,285,0,0" VerticalAlignment="Top" Width="151"/>
+        <TextBlock Name="txtEstado" HorizontalAlignment="Left" Margin="460,357,0,0" VerticalAlignment="Top" Width="151"/>
+        <TextBlock Name="txtDescripcion"  HorizontalAlignment="Left" Margin="460,412,0,0" VerticalAlignment="Top" Width="151"/>
         <TextBlock x:Name="Descripcion_Copy" HorizontalAlignment="Left" Height="24" Margin="460,447,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Foreground="#FF525252" FontSize="14" Text="Fecha"/>
-        <Label Content="." HorizontalAlignment="Left" Margin="460,471,0,0" VerticalAlignment="Top" Width="151"/>
+        <TextBlock Name="txtFecha"  HorizontalAlignment="Left" Margin="460,471,0,0" VerticalAlignment="Top" Width="151"/>
 
 
     </Grid>

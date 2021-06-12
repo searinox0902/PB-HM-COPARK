@@ -86,7 +86,15 @@ namespace WpfApp1
             {
                 ParkId.Text = (ListBoxPark.SelectedItem as DataParking).id;
                 bool state = (ListBoxPark.SelectedItem as DataParking).estado;
-                ParkState.Text = Convert.ToString(state);
+                if(state == false)
+                {
+                    ParkState.Text = "Reservado";
+                }
+                else
+                {
+                    ParkState.Text = "Disponible";
+                }
+                
                 ParkDate.Text = Convert.ToString((ListBoxPark.SelectedItem as DataParking).dateInit);
 
 
@@ -105,13 +113,13 @@ namespace WpfApp1
         {
             if (state == false)
             {
-                ParkState.Text = "Inactivo";
+                ParkState.Text = "Reservado";
                 ParkState.Foreground = Brushes.Red;
 
             }
             else if (state == true)
             {
-                ParkState.Text = "Activo";
+                ParkState.Text = "Disponible";
                 ParkState.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF2F70FE"));
             }
         }

@@ -18,7 +18,7 @@
         <TextBox x:Name="txtNewPass" HorizontalAlignment="Left" Height="23" Margin="406,369,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtDato2_TextChanged"/>
         <TextBox x:Name="txtNewPassConfirm" HorizontalAlignment="Left" Height="23" Margin="596,369,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtDato_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="596,348,0,0" TextWrapping="Wrap" Text="Confirmar Contraseña" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="100,68,0,0" TextWrapping="Wrap" Text="Administración / Crear puesto" VerticalAlignment="Top" Background="#FFFDFDFC" Foreground="#FF2F70FE"/>
+        <TextBlock HorizontalAlignment="Left" Margin="100,68,0,0" TextWrapping="Wrap" Text="Usuario / Editar Usuario" VerticalAlignment="Top" Background="#FFFDFDFC" Foreground="#FF2F70FE"/>
         <Button x:Name="button_editar" Content="EDITAR" HorizontalAlignment="Left" Margin="454,462,0,0" VerticalAlignment="Top" Width="85" Click="btn_editar" Background="#FF2F70FE" OpacityMask="White" Foreground="#FFEFF0EE" Height="24"/>
         <Rectangle Fill="#FFB7B7B7" HorizontalAlignment="Left" Height="1" Margin="4,103,0,0" VerticalAlignment="Top" Width="949" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>

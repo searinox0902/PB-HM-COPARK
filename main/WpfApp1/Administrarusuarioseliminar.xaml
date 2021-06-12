@@ -20,7 +20,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label x:Name="admin" Content="Administración / Editar Puesto" HorizontalAlignment="Left" Height="26" Margin="109,66,0,0" VerticalAlignment="Top" Width="247" FontWeight="Bold" Background="White" Foreground="#FF919191"/>
+        <Label x:Name="admin" Content="Administración / Eliminar Puesto" HorizontalAlignment="Left" Height="26" Margin="109,66,0,0" VerticalAlignment="Top" Width="247" FontWeight="Bold" Background="White" Foreground="#FF919191"/>
         <Label x:Name="admin_Copy" Content="ADMINISTRAR PUESTO (ELIMINAR)" HorizontalAlignment="Left" Height="31" Margin="165,138,0,0" VerticalAlignment="Top" Width="396" FontWeight="Bold" Background="White" Foreground="#FF919191" FontSize="14"/>
         <Image HorizontalAlignment="Left" Height="38" Margin="122,134,0,0" VerticalAlignment="Top" Width="37" Source="icon-admin_1.png"/>
         <Label x:Name="admin_Copy1" Content="LISTA DE PUESTOS:" HorizontalAlignment="Left" Height="26" Margin="109,225,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold" Background="White" Foreground="#FF919191"/>

@@ -12,9 +12,9 @@
         <Button x:Name="btnatras" Content="ATRÁS" HorizontalAlignment="Left" Height="25" Margin="24,12,0,0" VerticalAlignment="Top" Width="91" Click="btn_back" Background="{x:Null}" Foreground="White" BorderBrush="White" OpacityMask="Black"/>
         <TextBlock HorizontalAlignment="Left" Margin="87,203,0,0" TextWrapping="Wrap" Text="Crear Puesto" VerticalAlignment="Top"/>
         <Rectangle Fill="#FFF7F7F7" HorizontalAlignment="Left" Height="196" Margin="87,224,0,0" Stroke="#FFDDDDDD" VerticalAlignment="Top" Width="666" OpacityMask="#FF2F2F31"/>
-        <TextBlock HorizontalAlignment="Left" Margin="168,253,0,0" TextWrapping="Wrap" Text="Identificado" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtidentificador" HorizontalAlignment="Left" Height="23" Margin="168,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,-0.522" TextChanged="txtDato1_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Margin="164,330,0,0" TextWrapping="Wrap" Text="Descripcion" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="168,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"><Run Text="Identificado"/><Run Text="r"/></TextBlock>
+        <TextBox x:Name="txtidentificador" HorizontalAlignment="Left" Height="23" Margin="168,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,-0.522" />
+        <TextBlock HorizontalAlignment="Left" Margin="164,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Descripci"/><Run Text="ó"/><Run Text="n"/></TextBlock>
         <TextBox x:Name="txtDescripcion" HorizontalAlignment="Left" Height="23" Margin="168,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="400,274,0,0" TextWrapping="Wrap" Text="Estado" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="100,68,0,0" TextWrapping="Wrap" Text="Administración / Crear puesto" VerticalAlignment="Top" Background="#FFFDFDFC" Foreground="#FF2F70FE"/>

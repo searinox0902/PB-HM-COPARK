@@ -43,23 +43,11 @@ namespace WpfApp1
             
         }
 
-        private void txtDato1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtDato_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtDato3_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void btn_back(object sender, RoutedEventArgs e)
         {
+            Principal ventanaprincipal = new Principal();
+            ventanaprincipal.Show();
+            this.Close();
 
         }
 

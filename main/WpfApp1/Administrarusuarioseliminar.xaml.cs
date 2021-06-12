@@ -35,18 +35,6 @@ namespace WpfApp1
 
         }
 
-        private void btnatras_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-       
-        private void btnatras_Click_1(object sender, RoutedEventArgs e)
-        {
-            AdminPuestoCrear Administrarusuarioseliminar = new AdminPuestoCrear();
-            Administrarusuarioseliminar.Show();
-            Close();
-        }
-
         private void Elim_Puesto(object sender, RoutedEventArgs e)
         {
             if (ListBoxPuestos.SelectedItem != null)
@@ -67,10 +55,7 @@ namespace WpfApp1
                 }
             }
         }
-        private void btn_back(object sender, RoutedEventArgs e)
-        {
-
-        }
+     
 
         private void seleccted_change(object sender, SelectionChangedEventArgs e)
         {
@@ -84,6 +69,14 @@ namespace WpfApp1
                 txtFecha.Text = (ListBoxPuestos.SelectedItem as DataPuesto).dateInit;
                 //status_update(state);
             }
+        }
+
+        private void btn_back(object sender, RoutedEventArgs e)
+        {
+            Principal ventanaprincipal = new Principal();
+            ventanaprincipal.Show();
+            this.Close();
+
         }
 
     }

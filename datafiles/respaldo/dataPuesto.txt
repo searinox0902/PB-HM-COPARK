@@ -1,5 +1,45 @@
-A-00132323
+A-001
 False
-silla roja
-s
-s
+silla roja verde
+23/06/2021 12:00:00 a. m.
+23/06/2021 12:00:00 a. m.
+A-002
+True
+silla roja verde
+23/06/2021 12:00:00 a. m.
+23/06/2021 12:00:00 a. m.
+A-004
+True
+silla roja verde
+23/06/2021 12:00:00 a. m.
+23/06/2021 12:00:00 a. m.
+A-005
+True
+silla roja verde
+23/06/2021 12:00:00 a. m.
+23/06/2021 12:00:00 a. m.
+A-003
+True
+silla roja verde
+23/06/2021 12:00:00 a. m.
+23/06/2021 12:00:00 a. m.
+A-006
+True
+silla roja verde
+23/06/2021 12:00:00 a. m.
+23/06/2021 12:00:00 a. m.
+A-007
+True
+silla roja verde
+23/06/2021 12:00:00 a. m.
+23/06/2021 12:00:00 a. m.
+A-008
+True
+silla roja verde
+23/06/2021 12:00:00 a. m.
+23/06/2021 12:00:00 a. m.
+A-009
+False
+silla roja verde
+23/06/2021 12:00:00 a. m.
+23/06/2021 12:00:00 a. m.

@@ -12,17 +12,15 @@
         <Button x:Name="btnatras" Content="ATRÁS" HorizontalAlignment="Left" Height="25" Margin="24,12,0,0" VerticalAlignment="Top" Width="91" Click="btn_back" Background="{x:Null}" Foreground="White" BorderBrush="White" OpacityMask="Black"/>
         <TextBlock HorizontalAlignment="Left" Margin="87,203,0,0" TextWrapping="Wrap" Text="Crear Puesto" VerticalAlignment="Top"/>
         <Rectangle Fill="#FFF7F7F7" HorizontalAlignment="Left" Height="196" Margin="87,224,0,0" Stroke="#FFDDDDDD" VerticalAlignment="Top" Width="666" OpacityMask="#FF2F2F31"/>
-        <TextBlock HorizontalAlignment="Left" Margin="106,253,0,0" TextWrapping="Wrap" Text="Identificado" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtDato1" HorizontalAlignment="Left" Height="23" Margin="106,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,-0.522" TextChanged="txtDato1_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Margin="106,325,0,0" TextWrapping="Wrap" Text="Descripcion" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtDato2" HorizontalAlignment="Left" Height="23" Margin="106,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="304,253,0,0" TextWrapping="Wrap" Text="Estado" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtDato" HorizontalAlignment="Left" Height="23" Margin="295,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtDato_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Margin="295,325,0,0" TextWrapping="Wrap" Text="Fecha inicial" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="531,325,0,0" TextWrapping="Wrap" Text="Fecha final" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtDato3" HorizontalAlignment="Left" Height="23" Margin="531,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtDato3_TextChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="168,253,0,0" TextWrapping="Wrap" Text="Identificado" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtidentificador" HorizontalAlignment="Left" Height="23" Margin="168,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,-0.522" TextChanged="txtDato1_TextChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="164,330,0,0" TextWrapping="Wrap" Text="Descripcion" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDescripcion" HorizontalAlignment="Left" Height="23" Margin="168,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="400,274,0,0" TextWrapping="Wrap" Text="Estado" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="100,68,0,0" TextWrapping="Wrap" Text="Administración / Crear puesto" VerticalAlignment="Top" Background="#FFFDFDFC" Foreground="#FF2F70FE"/>
-        <Button x:Name="btncrear" Content="Crear" HorizontalAlignment="Left" Margin="400,440,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Background="#FF2F70FE" OpacityMask="White" Foreground="#FFEFF0EE"/>
+        <Button x:Name="btncrear" Content="Crear" HorizontalAlignment="Left" Margin="400,440,0,0" VerticalAlignment="Top" Width="75" Click="crearpuesto" Background="#FF2F70FE" OpacityMask="White" Foreground="#FFEFF0EE"/>
+        <RadioButton x:Name="Radiotrue" Content="Activo" HorizontalAlignment="Left" Height="16" Margin="475,274,0,0" VerticalAlignment="Top" Width="97" Checked="Radio_Checked"/>
+        <RadioButton x:Name="RadioFalse" Content="Bloqueado" HorizontalAlignment="Left" Height="16" Margin="620,274,0,0" VerticalAlignment="Top" Width="86" Checked="Radio_Checked"/>
 
     </Grid>
 </Window>

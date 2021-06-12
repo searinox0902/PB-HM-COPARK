@@ -58,7 +58,7 @@ namespace WpfApp1
                   }
               } 
         }
-
+       
 
         private void seleccted_change(object sender, SelectionChangedEventArgs e)
         {

@@ -5,59 +5,60 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.IO;
 
 
 namespace WpfApp1
 {
+    
     public partial class AdminPuestosEdit : Window
     {
+        ObservableCollection<DataPuesto> listaPuestosEdit = new ObservableCollection<DataPuesto>();
 
-        ObservableCollection<DataPuesto> listaPuestos = new ObservableCollection<DataPuesto>();
 
         int countPuesto = 0;
         int index = 0;
         bool state = false;
 
-        public AdminPuestosEdit()
+        // Aquí resivo la lista 
+        public AdminPuestosEdit(ObservableCollection<DataPuesto> listaPuestos)
         {
+
             InitializeComponent();
 
+            listaPuestosEdit = listaPuestos;
 
-
-            listaPuestos.Add(new DataPuesto() { id = "A-001", estado = false, desc = "Silla bonita", dateInit = "s", dateEnd = "s" });
-            listaPuestos.Add(new DataPuesto() { id = "A-002", estado = true, desc = "Silla verde", dateInit = "s", dateEnd = "s" });
-            listaPuestos.Add(new DataPuesto() { id = "A-003", estado = false, desc = "Silla roja", dateInit = "s", dateEnd = "s" });
-            listaPuestos.Add(new DataPuesto() { id = "A-004", estado = true, desc = "Silla cerca de la cafetera", dateInit = "s", dateEnd = "s" });
-            listaPuestos.Add(new DataPuesto() { id = "A-005", estado = false, desc = "Con vista bonita", dateInit = "s", dateEnd = "s" });
-
-
-            ListBoxPuestos.ItemsSource = listaPuestos;
-
+            ListBoxPuestos.ItemsSource = listaPuestosEdit;
             count_puestos();
         }
 
-        // BOTON DE RETROCEDER
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Principal ventanaprincipal = new Principal();
-            ventanaprincipal.Show();
-            this.Close();
-        }
 
-
-        // EDITAR 
-        private void Edit_Puesto(object sender, RoutedEventArgs e)
+        // BOTON DE EDITAR EDITAR 
+        public void Edit_Puesto(object sender, RoutedEventArgs e)
         {
 
             if (ListBoxPuestos.SelectedItem != null)
             {
                 index = ListBoxPuestos.SelectedIndex;
-                listaPuestos.RemoveAt(index);
-                listaPuestos.Insert(index, new DataPuesto() { id = PuestoId.Text, estado = state, desc = PuestoDesc.Text, dateInit = "s", dateEnd = "s" });
+                listaPuestosEdit.RemoveAt(index);
+                listaPuestosEdit.Insert(index, new DataPuesto() { id = PuestoId.Text, estado = state, desc = PuestoDesc.Text, dateInit = "s", dateEnd = "s" });
             }
+
+            // SE GUARDA LA LISTA EDITADA EN EL ARCHIVO PLANO
+            using (StreamWriter outputFile = new StreamWriter("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataPuesto.txt"))
+              {
+
+                  foreach (DataPuesto item in listaPuestosEdit)
+                  {
+                      outputFile.WriteLine(item.id);
+                      outputFile.WriteLine(item.estado);
+                      outputFile.WriteLine(item.desc);
+                      outputFile.WriteLine(item.dateInit);
+                      outputFile.WriteLine(item.dateEnd);
+                  }
+              } 
         }
-
-
+       
 
         private void seleccted_change(object sender, SelectionChangedEventArgs e)
         {
@@ -77,11 +78,12 @@ namespace WpfApp1
 
         public void count_puestos()
         {
-            countPuesto = listaPuestos.Count;
-            CountPuestos.Text = Convert.ToString(countPuesto);
+          countPuesto = listaPuestosEdit.Count;
+          CountPuestos.Text = Convert.ToString(countPuesto);
         }
 
 
+        // metodo para guardar en una variable el estado del campo Radio (true or false) 
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
@@ -110,16 +112,13 @@ namespace WpfApp1
             }
         }
 
-        public void RadioButton_Insert()
+        // BOTON DE RETROCEDER
+        private void btn_back(object sender, RoutedEventArgs e)
         {
-
-
+            Principal ventanaprincipal = new Principal();
+            ventanaprincipal.Show();
+            this.Close();
+         
         }
-
-
     }
-
-
-
-
 }

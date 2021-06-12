@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +21,12 @@ namespace WpfApp1
     /// </summary>
     public partial class AdminPuestoCrear : Window
     {
-        public AdminPuestoCrear()
+        bool estado;
+        ObservableCollection<DataPuesto> listaPuestoscrear = new ObservableCollection<DataPuesto>();
+        public AdminPuestoCrear(ObservableCollection<DataPuesto> listaPuestos)
         {
             InitializeComponent();
+            listaPuestoscrear = listaPuestos;
         }
 
       
@@ -35,30 +40,52 @@ namespace WpfApp1
 
         private void txtDato2_TextChanged(object sender, TextChangedEventArgs e)
         {
-
-        }
-
-        private void txtDato1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtDato_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtDato3_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            
         }
 
         private void btn_back(object sender, RoutedEventArgs e)
         {
+            Principal ventanaprincipal = new Principal();
+            ventanaprincipal.Show();
+            this.Close();
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void crearpuesto(object sender, RoutedEventArgs e)
+        {
+            string id = txtidentificador.Text;
+          
+            listaPuestoscrear.Add( new DataPuesto() { id = id, estado = estado, desc = txtDescripcion.Text, dateInit = "00", dateEnd = "00" });
+            using (StreamWriter outputFile = new StreamWriter("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataPuesto.txt"))
+            {
+
+                foreach (DataPuesto item in listaPuestoscrear)
+                {
+                    outputFile.WriteLine(item.id);
+                    outputFile.WriteLine(item.estado);
+                    outputFile.WriteLine(item.desc);
+                    outputFile.WriteLine(item.dateInit);
+                    outputFile.WriteLine(item.dateEnd);
+                }
+            }
+            MessageBox.Show("PUESTO CREADO");
+        }
+
+        private void Radio_Checked(object sender, RoutedEventArgs e)
+        {
+
+           
+            if (Radiotrue.IsChecked == true)
+            {
+                estado = true;
+            }
+            else
+            {
+                estado = false;
+            }
+        }
+
+        private void true_Checked(object sender, RoutedEventArgs e)
         {
 
         }

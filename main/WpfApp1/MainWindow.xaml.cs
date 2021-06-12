@@ -12,40 +12,87 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace WpfApp1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
     public partial class MainWindow : Window
     {
-        List<string> usuario = new List<string>();
-        List<string> contrasena = new List<string>();
+
+        List<DataUser> listaUsuarios = new List<DataUser>();
+
         int aux = 0;
-       
+
         public MainWindow()
         {
             InitializeComponent();
+
+            //Leemos todos los Usuarios del arhivo plano
+            using (StreamReader inputFile = new StreamReader("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataUser.txt"))
+            {
+                int i = 0;
+
+                while (inputFile.Peek() >= 0)
+                {
+                    listaUsuarios.Add(new DataUser() { Name = inputFile.ReadLine(), Pass = inputFile.ReadLine(), State = Convert.ToBoolean(inputFile.ReadLine()) });
+                    i++;
+                } 
+            }
+
         }
 
         private void btnIniciar_Click(object sender, RoutedEventArgs e)
         {
-            int i = 0, ban = 0;
+            int i = 0, aux = listaUsuarios.Count, ban = 0;
+            bool estadoUser;
+
             while (i < aux)
             {
-                if (usuario[i] == txtUsuario.Text && contrasena[i] == txtContrasena.Text)
+                if (listaUsuarios[i].Name == txtUsuario.Text && listaUsuarios[i].Pass == txtContrasena.Text)
                 {
-                    Principal ventanaprincipal = new Principal();
-                    ventanaprincipal.Show();
-                    this.Close();
-                    ban = 1;
+
+                    estadoUser = Convert.ToBoolean(listaUsuarios[i].State);
+                
+                    if (estadoUser == false)
+                    {
+                        ban = 2;
+                    }
+                    else
+                    {                    
+                        ban = 1;
+                    }
+                   
                 }
                 i++;
             }
-            if (ban == 0)
+
+
+            if (ban == 1)
             {
-                MessageBox.Show("Dato no encontrado...");
+                PrincipalUser principalUser = new PrincipalUser();
+                principalUser.Show();
+                this.Close();
+            }
+
+            if (ban == 2)
+            {
+                MessageBox.Show("Usuario Está Bloqueado, comuniquese con el Administrador.");
+            }
+
+
+
+            if ("admin" == txtUsuario.Text && "admin" == txtContrasena.Text)
+            {
+                Principal ventanaprincipal = new Principal();
+                ventanaprincipal.Show();
+                this.Close();
+            }else if (ban == 0)
+            {
+              MessageBox.Show("Usuario no Registrado...");
             }
         }
 
@@ -55,13 +102,30 @@ namespace WpfApp1
             int i = 0;
             for (i = 0; i <= aux; i++)
             {
-                usuario.Add(txtUsuario.Text);
-                contrasena.Add(txtContrasena.Text);
-                txtUsuario.Text = "";
-                txtContrasena.Text = "";
+                listaUsuarios.Add(new DataUser() { Name = txtUsuario.Text, Pass = txtContrasena.Text, State = true });
             }
             aux = aux + 1;
-            MessageBox.Show("Usuario registrado con exito");
+
+            if(txtUsuario.Text == "" || txtUsuario.Text == null ){
+                MessageBox.Show("Ingrese correctamente los datos");
+            }
+            else
+            {
+                //guardamos los datos del usuario registrado en el archivo plano
+                using (StreamWriter outputFile = new StreamWriter("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataUser.txt"))
+                {
+                    foreach (DataUser item in listaUsuarios)
+                    {
+                        outputFile.WriteLine(item.Name);
+                        outputFile.WriteLine(item.Pass);
+                        outputFile.WriteLine(Convert.ToString(item.State));
+                    }
+                }
+
+                MessageBox.Show("Usuario registrado correctamente");
+            }
+        
+ 
         }
     }
 }

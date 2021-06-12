@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,23 +12,54 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace WpfApp1
 {
     /// <summary>
     /// Interaction logic for Principal.xaml
     /// </summary>
+    /// 
+
     public partial class Principal : Window
     {
-        public  Principal()
+
+        ObservableCollection<DataPuesto> listaPuestos = new ObservableCollection<DataPuesto>();
+        ObservableCollection<DataUser> ListaUsuario = new ObservableCollection<DataUser>();
+
+        public Principal()
         {
             InitializeComponent();
+
+            // leer archivo plano dataPuesto
+            using (StreamReader inputFile = new StreamReader("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataPuesto.txt"))
+            {
+               
+                while (inputFile.Peek() >= 0)
+                {   
+                    listaPuestos.Add(new DataPuesto() { id = inputFile.ReadLine(), estado = Convert.ToBoolean(inputFile.ReadLine()), desc = inputFile.ReadLine(), dateInit = inputFile.ReadLine(), dateEnd = inputFile.ReadLine() });
+                }               
+            }
+
+            // Leer archivo datauser
+            using (StreamReader inputFileUser = new StreamReader("C:\\proyectos\\PB-HM-COPARK\\datafiles\\dataUser.txt"))
+            {
+
+                while (inputFileUser.Peek() >= 0)
+                {
+                    string Name = inputFileUser.ReadLine();
+                    string Pass = inputFileUser.ReadLine();
+                    bool State = Convert.ToBoolean(inputFileUser.ReadLine());
+                    ListaUsuario.Add(new DataUser() { Name = Name, Pass = Pass, State = State});
+                }
+            }
         }
 
+        // ===================  ADMIN PUESTO =============== //
 
         private void Editar_Puesto(object sender, RoutedEventArgs e)
         {
-            AdminPuestosEdit AdminPuestosEditWindow = new AdminPuestosEdit();
+            AdminPuestosEdit AdminPuestosEditWindow = new AdminPuestosEdit(listaPuestos);
 
             AdminPuestosEditWindow.Show();
             this.Close();
@@ -35,46 +67,47 @@ namespace WpfApp1
 
         private void Crear_Puesto(object sender, RoutedEventArgs e)
         {
-            AdminPuestoCrear AdminPuestoCrear = new AdminPuestoCrear();
+            AdminPuestoCrear AdminPuestoCrear = new AdminPuestoCrear(listaPuestos);
             AdminPuestoCrear.Show();
             this.Close();
-
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void Eliminar_Puesto(object sender, RoutedEventArgs e)
         {
+            Administrarusuarioseliminar administrarusuarioseliminar = new Administrarusuarioseliminar(listaPuestos);
 
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-            AdminPuestosEdit AdminPuestosEditWindow = new AdminPuestosEdit();
-
-            AdminPuestosEditWindow.Show();
+            administrarusuarioseliminar.Show();
             this.Close();
         }
 
-        private void Button_Click_6(object sender, RoutedEventArgs e)
-        {
+        // ===================  ADMIN USER =============== //
 
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Editar_Usuario(object sender, RoutedEventArgs e)
         {
-            MainWindow AdminPuestosEdit = new MainWindow();
-            AdminPuestosEdit.Show();
+            AdminUsuarioEdit VentanaEditarUserWindow = new AdminUsuarioEdit(ListaUsuario);
+            VentanaEditarUserWindow.Show();
             this.Close();
         }
 
-        private void EditarUsuario(object sender, RoutedEventArgs e)
+        private void Eliminar_Usuario(object sender, RoutedEventArgs e)
         {
-            AdminUsuarioEdit AdminUsuarioEdit = new AdminUsuarioEdit();
-            AdminUsuarioEdit.Show();
+            AdminUserEliminar VentanaEliminarUsuario = new AdminUserEliminar(ListaUsuario);
+            VentanaEliminarUsuario.Show();
+            this.Close();
+        }
+
+
+        private void Crear_Usuario(object sender, RoutedEventArgs e)
+        {
+            AdminCrearUser crearUser = new AdminCrearUser(ListaUsuario);
+            crearUser.Show();
+            this.Close();
+        }
+
+        private void Btn_Back(object sender, RoutedEventArgs e)
+        {
+            MainWindow InicioSesion = new MainWindow();
+            InicioSesion.Show();
             this.Close();
         }
     }

@@ -94,6 +94,9 @@ namespace WpfApp1
 
         private void Crear_Usuario(object sender, RoutedEventArgs e)
         {
+            AdminCrearUser crearUser = new AdminCrearUser(ListaUsuario);
+            crearUser.Show();
+            this.Close();
         }
 
         private void Btn_Back(object sender, RoutedEventArgs e)
